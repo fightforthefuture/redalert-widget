@@ -7,12 +7,12 @@ en:
 
   step1:
     body_html: |
-      The FCC killed net neutrality.  But on May 9th, the U.S. Senate will announce a vote on whether or not to overturn the FCC’s decision.  Enter your information below to send an email to Congress that says, "I want you to vote YES! to overturn the FCC and save Title II net neutrality protections."
+      The FCC voted to let ISPs like Comcast and Verizon ruin the Internet with throttling, censorship, and new fees. But now the Senate is about to force a vote to overrule them and save the Internet. **Tell your lawmakers: "Vote yes on the Congressional Review Act resolution to restore net neutrality."**
     name_placeholder: Name
     email_placeholder: Email
     address_placeholder: Address
     zip_placeholder: ZIP
-    cta_button: Join the Protest
+    cta_button: Write Congress
     loading_button: Saving...
     fftf_disclaimer_html: <a href="https://www.fightforthefuture.org">Fight for the Future</a> will contact me about important net neutrality protests and news. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
     dp_disclaimer_html: <a href="https://www.demandprogress.org">Demand Progress</a> will contact me about important net neutrality protests and news. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
@@ -21,19 +21,19 @@ en:
 
   step1_phone:
     body_html: |
-      The FCC killed net neutrality.  But on May 9th, the U.S. Senate will announce a vote on whether or not to overturn the FCC’s decision.  Enter your phone number below; we'll connect you to your lawmakers and provide you with a suggestion of how to tell them you support net neutrality.
+      The FCC voted to let ISPs like Comcast and Verizon ruin the Internet with throttling, censorship, and new fees. But now the Senate is about to force a vote to overrule them and save the Internet. **Tell your lawmakers: "Vote yes on the Congressional Review Act resolution to restore net neutrality."**
     phone_placeholder: Phone
-    cta_button: Join the Protest
+    cta_button: Call Congress
     loading_button: Saving...
-    disclaimer_html: Your phone number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
+    disclaimer_html: Your number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
     close_button: No thanks, I don't want to take action
 
   step2:
     title_html: "**Thanks!** Can you call?"
-    body_html: You've sent an email.  Now enter your phone number below; we'll provide you with a suggestion of what to say and connect you directly with your lawmaker's office. Trust us ... they'll listen.
+    body_html: We'll provide you with a suggestion of what to say and connect you directly with your lawmaker's office.
     phone_placeholder: Phone Number
     cta_button: Call
-    disclaimer_html: Your phone number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
+    disclaimer_html: Your number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
     close_button: No thanks, I'm all done
 
   step3:
@@ -41,7 +41,7 @@ en:
     body_html: |
       **Introduce yourself, be polite and say:**
 
-      I support Title Two net neutrality and I urge you to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's December vote to repeal the Open Internet Order."
+      I'm calling to ask my lawmakers to support the Congressional Review Act resolution to block the FCC's repeal of net neutrality and restore the open Internet. Thank you.
     warning: If lines are busy, we may call you in a few minutes.
     buttons_header: Done calling?  Do these things, too.
     events_button: Find an event near you
