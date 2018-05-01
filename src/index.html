@@ -64,7 +64,6 @@
             <a href="#" class="close">{{ step1.close_button }}</a>
           </footer>
         </div>
-        <!-- <button onclick="return showStep(2)">next</button> -->
       </div>
       <div class="step" id="step2" data-step="2">
         <h2>{{{ step2.title_html }}}</h2>
@@ -82,7 +81,6 @@
         <footer>
           <a href="#" class="close">{{ step2.close_button }}</a>
         </footer>
-        <!-- <button onclick="return showStep(3)">next</button> -->
       </div>
       <div class="step" id="step3" data-step="3">
         <h2>
@@ -107,15 +105,16 @@
         <footer>
           <a href="#" class="close">{{ step3.close_button }}</a>
         </footer>
-        <!-- <button class="close">Done</button> -->
       </div>
     </div>
   </div>
   <div class="minimized" data-minimized="true">
     <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="35.25" height="27.5" viewbox="0 0 141 110"><path fill-rule="evenodd" fill="#FFF" d="M70.499.012L0 109.995h141L70.499.012zm0 101.266c-5.01 0-9.07-4.047-9.07-9.038 0-4.992 4.06-9.039 9.07-9.039 5.009 0 9.072 4.047 9.072 9.039 0 4.991-4.063 9.038-9.072 9.038zm-9.07-26.456V30.343h18.14v44.479h-18.14z"/></svg>
     <h1>{{ title }}</h1>
-    <a href="#" class="close">{{ minimized.close_button }}</a>
     <a href="#" class="btn">{{ minimized.cta_button }}</a>
+    <div>
+      <a href="#" class="close">{{ minimized.close_button }}</a>
+    </div>
   </div>
 </body>
 </html>

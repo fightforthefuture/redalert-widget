@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.setCookie(cookieName, 'true', this.cookieExpirationDays);
 
         this.injectCSS('RED_ALERT_CSS',
-          '#' + this.id + ' { position: fixed; right: 0px; bottom: 0px; width: 400px; height: 300px; z-index: 20000; -webkit-overflow-scrolling: touch; transition: width .4s ease-in, height .4s ease-in; } ' +
+          '#' + this.id + ' { position: fixed; right: 0px; bottom: 0px; width: 425px; height: 325px; z-index: 20000; -webkit-overflow-scrolling: touch; transition: width .4s ease-in, height .4s ease-in; } ' +
           '#' + this.id + '.RAW--maximized { width: 100%; height: 100%; } ' +
           '#' + this.id + '.RAW--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform .2s ease-in, opacity .2s ease-in; } ' +
           '#' + this.id + ' iframe { width: 100%; height: 100%; }'

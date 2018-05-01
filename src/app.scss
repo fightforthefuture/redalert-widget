@@ -346,7 +346,7 @@ body[data-minimized="true"] {
 
 .minimized {
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 2rem;
   right: 2.5rem;
   text-align: right;
   width: 25rem;
@@ -356,17 +356,20 @@ body[data-minimized="true"] {
     margin-bottom: 1rem;
   }
 
-  a.close, a.btn {
+  a.btn {
     display: inline-block;
     font-size: 1.5rem;
     padding: 1rem;
-    font-family: $title-font;
-    text-transform: uppercase;
     width: auto;
   }
 
   a.close {
-    margin-right: 1.8rem;
+    display: inline-block;
+    margin-top: 1.3rem;
+    font-family: $title-font;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: lighten(#000, 10%);
   }
 }
 
