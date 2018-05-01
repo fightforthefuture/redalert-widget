@@ -7,9 +7,9 @@
   "version": "1.0.0",
   "repository": "",
   "scripts": {
-    "watch": "webpack -w --mode development",
     "dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "predeploy": "npm run build",
     "deploy": "aws s3 sync dist s3://redalert.battleforthenet.com --acl public-read --delete"
   },
   "dependencies": {},
