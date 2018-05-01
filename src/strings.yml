@@ -1,0 +1,56 @@
+en:
+  title: Red Alert for Net Neutrality
+
+  minimized:
+    close_button: Close
+    cta_button: Take Action
+
+  step1:
+    body_html: |
+      The FCC killed net neutrality.  But on May 9th, the U.S. Senate will announce a vote on whether or not to overturn the FCC’s decision.  Enter your information below to send an email to Congress that says, "I want you to vote YES! to overturn the FCC and save Title II net neutrality protections."
+    name_placeholder: Name
+    email_placeholder: Email
+    address_placeholder: Address
+    zip_placeholder: ZIP
+    cta_button: Join the Protest
+    loading_button: Saving...
+    fftf_disclaimer_html: <a href="https://www.fightforthefuture.org">Fight for the Future</a> will contact me about important net neutrality protests and news. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
+    dp_disclaimer_html: <a href="https://www.demandprogress.org">Demand Progress</a> will contact me about important net neutrality protests and news. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
+    fp_disclaimer_html: <a href="https://www.freepress.net/">Free Press</a> will contact me about important net neutrality protests and news. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
+    close_button: No thanks, I don't want to take action
+
+  step1_phone:
+    body_html: |
+      The FCC killed net neutrality.  But on May 9th, the U.S. Senate will announce a vote on whether or not to overturn the FCC’s decision.  Enter your phone number below; we'll connect you to your lawmakers and provide you with a suggestion of how to tell them you support net neutrality.
+    phone_placeholder: Phone
+    cta_button: Join the Protest
+    loading_button: Saving...
+    disclaimer_html: Your phone number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
+    close_button: No thanks, I don't want to take action
+
+  step2:
+    title_html: "**Thanks!** Can you call?"
+    body_html: You've sent an email.  Now enter your phone number below; we'll provide you with a suggestion of what to say and connect you directly with your lawmaker's office. Trust us ... they'll listen.
+    phone_placeholder: Phone Number
+    cta_button: Call
+    disclaimer_html: Your phone number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
+    close_button: No thanks, I'm all done
+
+  step3:
+    title: Calling you now...
+    body_html: |
+      **Introduce yourself, be polite and say:**
+
+      I support Title Two net neutrality and I urge you to use the Congressional Review Act to pass a "resolution of disapproval" reversing the FCC's December vote to repeal the Open Internet Order."
+    warning: If lines are busy, we may call you in a few minutes.
+    buttons_header: Done calling?  Do these things, too.
+    events_button: Find an event near you
+    facebook_button: Share on Facebook
+    twitter_button: Share on Twitter
+    donate_button: Donate
+    facebook_share_url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.battleforthenet.com%2Fredalert%2F
+    twitter_share_url: https://twitter.com/intent/tweet?text=In%20mid-May%2C%20the%20U.S.%20Senate%20will%20vote%20on%20whether%20or%20not%20to%20save%20net%0Aneutrality.%20Join%20millions%20of%20other%20every%20day%20Americans%20demanding%20freedom%20on%0Athe%20Internet.%0A&url=https%3A%2F%2Fwww.battleforthenet.com%2Fredalert%2F
+    fftf_donate_url: https://donate.fightforthefuture.org
+    dp_donate_url: https://secure.actblue.com/donate/nndayofaction?refcode=20170712-bftn
+    fp_donate_url: https://freepress.actionkit.com/donate/single/
+    close_button: Return to website

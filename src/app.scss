@@ -1,0 +1,377 @@
+$body-font: open-sans, sans-serif;
+$title-font: futura-pt-bold, $body-font;
+$red: #fc0e0e;
+$background-color: rgba(220, 5, 5, 0.5);
+$border-radius: 4px;
+$button-color: #000;
+$facebook-blue: #3C5A96;
+$twitter-blue: #2ecbf8;
+
+@mixin mobile {
+  @media only screen and (max-device-width: 480px) {
+    @content;
+  }
+}
+
+@mixin data-filter($filter, $options...) {
+  @each $opt in $options {
+    [data-#{$filter}="#{$opt}"] [data-#{$filter}]:not([data-#{$filter}="#{$opt}"]) {
+      display: none;
+    }
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1 }
+  to { opacity: 0 }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include mobile {
+    font-size: 52.5%;
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-out {
+  animation: fade-out .4s ease-out;
+  animation-fill-mode: forwards;
+}
+
+.clearfix:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, .btn {
+  font-family: $title-font;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+body {
+  font-family: $body-font;
+  font-size: 1.7rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #fff;
+  background-image: repeating-radial-gradient(ellipse farthest-corner at right bottom, #dc0505 0%, #dc0505 70%, rgba(220, 5, 5, .75) 90%, rgba(0, 0, 0, 0) 200%);
+}
+
+.container {
+  width: 600px;
+  max-width: 90%;
+  margin: auto;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 3.8rem;
+  line-height: 1;
+  margin: 0;
+}
+
+h2 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 2.8rem;
+}
+
+p {
+  margin: 1.5rem 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+input, textarea {
+  font-family: $title-font;
+  text-transform: uppercase;
+  border: none;
+  font-size: 1.7rem;
+  padding: 2rem;
+  border-radius: $border-radius;
+  width: 100%;
+  color: #0f0728;
+}
+
+.btn {
+  text-align: center;
+  padding: 2rem;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: $button-color;
+  color: #fff;
+  border: none;
+  border-radius: $border-radius;
+  font-size: 2.2rem;
+  letter-spacing: 0.2rem;
+  transition: transform .2s ease-in;
+
+  &:hover {
+    color: #fff;
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+}
+
+hr {
+  border: 0;
+  height: .1rem;
+  background-color: #ccc;
+  margin: 3.5rem 0;
+}
+
+form {
+  margin: 3rem 0;
+
+  .row {
+    @extend .clearfix;
+    margin-bottom: 0.75rem;
+
+    input, .btn {
+      float: left;
+      width: 49.25%;
+
+      &:first-child {
+        margin-right: 1.5%;
+      }
+
+      &.address {
+        width: 68.25%;
+      }
+
+      &.zip {
+        width: 30%;
+      }
+    }
+  }
+
+  &.is-loading .is-not-loading,
+  &.is-not-loading .is-loading {
+    display: none;
+  }
+}
+
+.disclaimer p {
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+footer {
+  margin-top: 5rem;
+  text-align: center;
+  font-family: $title-font;
+  text-transform: uppercase;
+}
+
+body:not([data-step="1"]) {
+  color: #111;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-image: repeating-linear-gradient(306deg,#fff 0%,#fff 70%,rgba(0, 0, 0, 0) 100%);
+
+  h2 {
+    p {
+      font-size: inherit;
+      margin: 0;
+    }
+
+    strong {
+      color: #1abe50;
+    }
+  }
+
+  .body p {
+    font-size: 2rem;
+  }
+
+  .disclaimer {
+    font-weight: bolder;
+  }
+}
+
+.step {
+  animation: fade-in .4s ease-out;
+}
+
+#step1 {
+  .body p {
+    margin: 0;
+  }
+
+  .call-form {
+    .btn {
+      padding: 1.85rem 0;
+    }
+  }
+}
+
+#step2 {
+  input {
+    border: .2rem solid #111;
+    padding: 2rem;
+    width: 58%;
+  }
+
+  .btn {
+    width: 39%;
+  }
+}
+
+#step3 {
+  h2 {
+    svg {
+      margin: 0 0 -0.25rem 0;
+    }
+  }
+
+  .warning {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    svg {
+      margin: 0 .25rem -.35rem 0;
+    }
+  }
+
+  .btn {
+    transition: background-color .2s;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+  .btn-events {
+    color: #111;
+    background-color: #fff;
+    border: .2rem solid #9a9a9a;
+    font-size: 1.7rem;
+    display: block;
+    margin-bottom: 1rem;
+    padding: 1.7rem 0;
+
+    &:hover {
+      background-color: darken(#fff, 10%);
+    }
+
+    svg {
+      margin: 0 1rem -0.45rem 0;
+    }
+  }
+
+  .btn-row .btn {
+    font-size: 1.2rem;
+    padding: 1.5rem 0;
+    width: 32.5%;
+    float: left;
+    margin-right: 1.25%;
+
+    &.btn-donate {
+      margin-right: 0;
+    }
+  }
+
+  .btn-facebook {
+    background-color: $facebook-blue;
+
+    &:hover {
+      background-color: darken($facebook-blue, 10%);
+    }
+  }
+
+  .btn-twitter {
+    background-color: $twitter-blue;
+
+    &:hover {
+      background-color: darken($twitter-blue, 10%);
+    }
+  }
+
+  .btn-donate {
+    background-color: #eee;
+    color: #111;
+
+    &:hover {
+      background-color: darken(#eee, 10%);
+    }
+  }
+}
+
+body[data-minimized="true"] {
+  background-image: repeating-radial-gradient(ellipse farthest-corner at right bottom,rgb(220, 5, 5) 0%,rgb(220, 5, 5) 40%,rgba(220, 5, 5, 0.5) 60%,rgba(0, 0, 0, 0) 70%,rgba(0, 0, 0, 0) 100%);
+}
+
+.minimized {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  text-align: right;
+  width: 25rem;
+
+  h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+  }
+
+  a.close, a.btn {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 1rem;
+    font-family: $title-font;
+    text-transform: uppercase;
+    width: auto;
+  }
+
+  a.close {
+    margin-right: 1.8rem;
+  }
+}
+
+@include data-filter(org, fftf, fp, dp);
+@include data-filter(variant, full-form, phone-only);
+@include data-filter(step, 1, 2, 3);
+@include data-filter(loading, true, false);
+@include data-filter(minimized, true, false);

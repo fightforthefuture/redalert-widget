@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="stylesheet" href="https://use.typekit.net/dkr1hdf.css">
+</head>
+<body data-org="fftf" data-variant="full-form" data-step="1" data-minimized="true">
+  <div class="flex-center" data-minimized="false">
+    <div class="container">
+      <div class="step" id="step1" data-step="1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="70.5" height="55" viewbox="0 0 141 110"><path fill-rule="evenodd" fill="#FFF" d="M70.499.012L0 109.995h141L70.499.012zm0 101.266c-5.01 0-9.07-4.047-9.07-9.038 0-4.992 4.06-9.039 9.07-9.039 5.009 0 9.072 4.047 9.072 9.039 0 4.991-4.063 9.038-9.072 9.038zm-9.07-26.456V30.343h18.14v44.479h-18.14z"/></svg>
+        <h1>{{ title }}</h1>
+        <div data-variant="full-form">
+          <div class="body">{{{ step1.body_html }}}</div>
+          <form method="post" action="https://queue.fightforthefuture.org/action" class="email-form" data-loading="false">
+            <div class="row">
+              <input type="text" name="member[first_name]" placeholder="{{ step1.name_placeholder }}" required autofocus>
+              <input type="email" name="member[email]" placeholder="{{ step1.email_placeholder }}" required>
+            </div>
+            <div class="row">
+              <input type="address" name="member[street_address]" placeholder="{{ step1.address_placeholder }}" class="address" required>
+              <input type="tel" name="member[postcode]" placeholder="{{ step1.zip_placeholder }}" class="zip" required id="email_zip">
+            </div>
+            <button class="btn" disabled data-loading="true">{{ step1.loading_button }}</button>
+            <button class="btn" data-loading="false">{{ step1.cta_button }}</button>
+            <div class="disclaimer" data-org="fftf">{{{ step1.fftf_disclaimer_html }}}</div>
+            <div class="disclaimer" data-org="dp">{{{ step1.dp_disclaimer_html }}}</div>
+            <div class="disclaimer" data-org="fp">{{{ step1.fp_disclaimer_html }}}</div>
+
+            <!-- Mothership Honeypot Bot Defense -->
+            <input class="hidden" type="checkbox" checked="checked" name="hp_enabled">
+            <input class="hidden" type="checkbox" name="hp_disabled">
+            <input class="hidden" type="text" name="guard">
+
+            <!-- Mothership -->
+            <input type="hidden" name="contact_congress" value="1">
+            <input type="hidden" name="fcc_ecfs_docket" value="17-108">
+            <input type="hidden" name="org" value="fftf" id="email_org">
+            <input type="hidden" name="member[country]" value="US">
+            <input type="hidden" name="submit" value="Protect Net Neutrality!">
+
+            <!-- Action Network -->
+            <input type="hidden" name="an_tags" value="[&quot;net-neutrality&quot;]">
+            <input type="hidden" name="an_petition_id" value="e31d4d82-9fac-4cf0-882e-96bc565e1f2">
+          </form>
+          <footer>
+            <a href="#" class="close">{{ step1.close_button }}</a>
+          </footer>
+        </div>
+        <div data-variant="phone-only">
+          <div class="body">{{{ step1_phone.body_html }}}</div>
+          <form method="post" action="https://call-congress.fightforthefuture.org/create" class="call-form" data-loading="false">
+            <div class="row">
+              <input type="tel" name="userPhone" placeholder="{{ step1_phone.phone_placeholder }}" required>
+              <button class="btn" data-loading="false">{{ step1_phone.cta_button }}</button>
+              <button class="btn" disabled data-loading="true">{{ step1_phone.loading_button }}</button>
+            </div>
+            <div class="disclaimer">{{{ step1_phone.disclaimer_html }}}</div>
+            <input type="hidden" name="campaignId" value="battleforthenet-2017">
+          </form>
+          <footer>
+            <a href="#" class="close">{{ step1.close_button }}</a>
+          </footer>
+        </div>
+        <!-- <button onclick="return showStep(2)">next</button> -->
+      </div>
+      <div class="step" id="step2" data-step="2">
+        <h2>{{{ step2.title_html }}}</h2>
+        <div class="body">{{{ step2.body_html }}}</div>
+        <form method="post" action="https://call-congress.fightforthefuture.org/create" class="call-form" data-loading="false">
+          <div class="row">
+            <input type="tel" name="userPhone" placeholder="{{ step2.phone_placeholder }}" required>
+            <button class="btn" data-loading="false">{{ step2.cta_button }}</button>
+            <button class="btn" disabled data-loading="true">{{ step1.loading_button }}</button>
+          </div>
+          <div class="disclaimer">{{{ step2.disclaimer_html }}}</div>
+          <input type="hidden" name="zipcode" id="call_zip">
+          <input type="hidden" name="campaignId" value="battleforthenet-2017">
+        </form>
+        <footer>
+          <a href="#" class="close">{{ step2.close_button }}</a>
+        </footer>
+        <!-- <button onclick="return showStep(3)">next</button> -->
+      </div>
+      <div class="step" id="step3" data-step="3">
+        <h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewbox="0 0 49 49"><path fill-rule="evenodd" d="M24.5 0C10.966 0 0 10.966 0 24.5S10.966 49 24.5 49 49 38.034 49 24.5 38.034 0 24.5 0zm1.039 14.965a.708.708 0 0 1 .794-.608c1.225.157 3.567.715 5.546 2.764a9.298 9.298 0 0 1 2.509 5.292.699.699 0 0 1-.617.784h-.098a.7.7 0 0 1-.696-.618 7.864 7.864 0 0 0-2.127-4.478c-1.675-1.735-3.665-2.215-4.704-2.343a.707.707 0 0 1-.607-.793zm-.245 4.782a.714.714 0 0 1 .794-.608 4.146 4.146 0 0 1 2.41 1.206 4.07 4.07 0 0 1 1.098 2.313.705.705 0 0 1-.627.774c-.03 0-.049.01-.079.01a.719.719 0 0 1-.705-.637 2.641 2.641 0 0 0-.706-1.48 2.68 2.68 0 0 0-1.578-.784.713.713 0 0 1-.607-.794zm10.28 15.004l-3.42 3.42a3.501 3.501 0 0 1-3.959.706 36.402 36.402 0 0 1-11.123-7.968 36.696 36.696 0 0 1-6.674-9.819 3.513 3.513 0 0 1 .696-3.969l3.42-3.421a1.444 1.444 0 0 1 2.048 0l3.067 3.058c.579.578.579 1.49.01 2.058l-2.293 2.293a23.22 23.22 0 0 0 3.949 5.743 23.528 23.528 0 0 0 6.831 5.037l2.293-2.293a1.444 1.444 0 0 1 2.048 0l3.107 3.107a1.444 1.444 0 0 1 0 2.048zm2.734-12.113c-.019-.01-.049 0-.078 0a.7.7 0 0 1-.696-.617c-.196-1.539-.892-4.508-3.381-7.096-2.764-2.861-6.125-3.547-7.438-3.714a.705.705 0 1 1 .166-1.401c1.461.186 5.204.95 8.281 4.135 2.774 2.882 3.548 6.184 3.764 7.899a.714.714 0 0 1-.618.794z"/></svg>
+          {{ step3.title }}
+        </h2>
+        <div class="body">{{{ step3.body_html }}}</div>
+        <div class="warning">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewbox="0 0 32 32"><path fill-rule="evenodd" d="M16 32C7.163 32 0 24.837 0 16S7.163 0 16 0s16 7.163 16 16-7.163 16-16 16zm0-2c7.732 0 14-6.268 14-14S23.732 2 16 2 2 8.268 2 16s6.268 14 14 14zm0-6a2 2 0 1 1-.001-3.999A2 2 0 0 1 16 24zM14.19 9.905C14.085 8.853 14.848 8 15.906 8h.188c1.052 0 1.821.853 1.716 1.905l-.711 7.1A1.124 1.124 0 0 1 16 18a1.126 1.126 0 0 1-1.099-.995l-.711-7.1z"/></svg>
+          {{ step3.warning }}
+        </div>
+        <hr>
+        <h3>{{ step3.buttons_header }}</h3>
+        <a class="btn btn-events" href="https://events.battleforthenet.com" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="21" viewbox="0 0 20 28"><path fill-rule="evenodd" fill="#9A9A9A" d="M9.996 0C4.484 0-.001 4.402-.001 9.811c0 5.236 9.147 17.444 9.541 17.959a.575.575 0 0 0 .919 0C10.847 27.255 20 15.047 20 9.811 20 4.402 15.515 0 9.996 0zm0 14.56c-2.664 0-4.833-2.128-4.833-4.749 0-2.615 2.169-4.743 4.833-4.743 2.665 0 4.84 2.128 4.84 4.743 0 2.621-2.175 4.749-4.84 4.749z"/></svg>{{ step3.events_button }}</a>
+        <div class="clearfix btn-row">
+          <a class="btn btn-facebook" href="{{ step3.facebook_share_url }}" target="_blank">{{ step3.facebook_button }}</a>
+          <a class="btn btn-twitter" href="{{ step3.twitter_share_url }}" target="_blank">{{ step3.twitter_button }}</a>
+          <a class="btn btn-donate" href="{{ step3.fftf_donate_url }}" target="_blank" data-org="fftf">{{ step3.donate_button }}</a>
+          <a class="btn btn-donate" href="{{ step3.fp_donate_url }}" target="_blank" data-org="fp">{{ step3.donate_button }}</a>
+          <a class="btn btn-donate" href="{{ step3.dp_donate_url }}" target="_blank" data-org="dp">{{ step3.donate_button }}</a>
+        </div>
+        <footer>
+          <a href="#" class="close">{{ step3.close_button }}</a>
+        </footer>
+        <!-- <button class="close">Done</button> -->
+      </div>
+    </div>
+  </div>
+  <div class="minimized" data-minimized="true">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="35.25" height="27.5" viewbox="0 0 141 110"><path fill-rule="evenodd" fill="#FFF" d="M70.499.012L0 109.995h141L70.499.012zm0 101.266c-5.01 0-9.07-4.047-9.07-9.038 0-4.992 4.06-9.039 9.07-9.039 5.009 0 9.072 4.047 9.072 9.039 0 4.991-4.063 9.038-9.072 9.038zm-9.07-26.456V30.343h18.14v44.479h-18.14z"/></svg>
+    <h1>{{ title }}</h1>
+    <a href="#" class="close">{{ minimized.close_button }}</a>
+    <a href="#" class="btn">{{ minimized.cta_button }}</a>
+  </div>
+</body>
+</html>
