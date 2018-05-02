@@ -2,34 +2,55 @@
   'use strict';
 
   var opts = window.RED_ALERT_OPTIONS || {};
-  var bodyStyles = {};
+  var resetStyles = {};
 
   var widget = {
     id: 'RED_ALERT_WIDGET',
     org: (opts.org || null),
     cookieExpirationDays: parseFloat((opts.cookieExpirationDays || 1)),
-    alwaysShow: !!(opts.alwaysShow || false),
+    alwaysShow: !!opts.alwaysShow,
     disableGoogleAnalytics: !!opts.disableGoogleAnalytics,
     iframeHost: (typeof(opts.iframeHost) === 'undefined' ? 'https://redalert.battleforthenet.com' : opts.iframeHost),
     position: (opts.position || null),
     cowardlyRefuseToMaximize: !!opts.cowardlyRefuseToMaximize,
+    animationDuration: 200,
 
     maximize: function() {
+      resetStyles = {
+        overflow: document.body.style.overflow
+      };
+
       document.getElementById(this.id).classList.add('RAW--maximized');
-      bodyStyles.overflow = document.body.style.overflow;
-      bodyStyles.position = document.body.style.position;
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
+
+      setTimeout(function(){
+        document.body.style.overflow = 'hidden';
+
+        if (window.innerWidth < 500) {
+          resetStyles.position = document.body.style.position;
+          resetStyles.scrollTop = window.pageYOffset;
+          document.body.style.position = 'fixed';
+        }
+      }, this.animationDuration);
     },
 
     closeWindow: function() {
+      document.body.style.overflow = resetStyles.overflow;
+
+      if (resetStyles.position !== undefined) {
+        document.body.style.position = resetStyles.position;
+      }
+
+      if (resetStyles.scrollTop !== undefined) {
+        window.scrollTo(0, resetStyles.scrollTop);
+      }
+
+      window.removeEventListener('message', onMessageReceived);
+
       var el = document.getElementById(this.id);
       el.classList.add('RAW--closing')
       setTimeout(function(){
         el.parentNode.removeChild(el);
-        document.body.style.overflow = bodyStyles.overflow;
-        document.body.style.position = bodyStyles.position;
-      }, 300);
+      }, this.animationDuration);
     },
 
     getCookie: function(cname) {
@@ -132,18 +153,35 @@
         }
 
         this.injectCSS('RED_ALERT_CSS',
-          '#' + this.id + ' { position: fixed; right: ' + right + '; left: ' + left + '; bottom: 0px; width: 450px; height: 350px; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; transition: width .2s ease-in, height .2s ease-in; } ' +
+          '#' + this.id + ' { position: fixed; right: ' + right + '; left: ' + left + '; bottom: 0px; width: 450px; height: 350px; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; transition: width ' + this.animationDuration + 'ms ease-in, height ' + this.animationDuration + 'ms ease-in; } ' +
           '#' + this.id + '.RAW--maximized { width: 100%; height: 100%; } ' +
-          '#' + this.id + '.RAW--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform .2s ease-in, opacity .2s ease-in; } ' +
+          '#' + this.id + '.RAW--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform ' + this.animationDuration + 'ms ease-in, opacity ' + this.animationDuration + 'ms ease-in; } ' +
           '#' + this.id + ' iframe { width: 100%; height: 100%; }'
         );
 
         this.createIframe();
 
-        window.addEventListener('message', this.receiveMessage.bind(this));
+        window.addEventListener('message', onMessageReceived);
       }
+
+      document.removeEventListener('DOMContentLoaded', onDOMContentLoaded);
     }
   };
+
+  function onDOMContentLoaded() {
+    widget.init();
+  }
+
+  function onMessageReceived(event) {
+    if (!event.data.RED_ALERT) return;
+
+    switch (event.data.action) {
+      case 'maximize':
+        return widget.maximize();
+      case 'closeWindow':
+        return widget.closeWindow();
+    }
+  }
 
   // Wait for DOM content to load.
   switch(document.readyState) {
@@ -153,6 +191,6 @@
       widget.init();
       break;
     default:
-      document.addEventListener('DOMContentLoaded', widget.init.bind(widget));
+      document.addEventListener('DOMContentLoaded', onDOMContentLoaded);
   }
 })();
