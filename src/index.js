@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addTrackingEvents()
   }
 
-  if (todayIs(2018, 5, 1)) {
+  if (todayIs(2018, 5, 9)) {
     maximize()
   }
 
