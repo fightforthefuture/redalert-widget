@@ -27,6 +27,10 @@ $dark-red: #bc0000;
   background-attachment: fixed;
 }
 
+@mixin minimized-background-gradient($form-color, $to-color, $position) {
+  background-image: repeating-radial-gradient(ellipse farthest-corner at $position bottom,$form-color 0%,$to-color 45%,rgba($to-color, 0.5) 60%,rgba(0, 0, 0, 0) 70%,rgba(0, 0, 0, 0) 100%);
+}
+
 @keyframes fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -96,7 +100,7 @@ body {
   font-weight: 300;
   line-height: 1.5;
   color: #fff;
-  @include background-gradient($light-red, $dark-red);
+  @include background-gradient($dark-red, $light-red);
 }
 
 .container {
@@ -377,7 +381,7 @@ body[data-minimized="true"] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: repeating-radial-gradient(ellipse farthest-corner at right bottom,$light-red 0%,$dark-red 45%,rgba($dark-red, 0.5) 60%,rgba(0, 0, 0, 0) 70%,rgba(0, 0, 0, 0) 100%);
+  @include minimized-background-gradient($dark-red, $light-red, right);
 }
 
 .minimized {
@@ -412,7 +416,7 @@ body[data-minimized="true"] {
 
 body[data-position="left"] {
   .minimized-bg {
-    background-image: repeating-radial-gradient(ellipse farthest-corner at left bottom,$light-red 0%,$dark-red 45%,rgba($dark-red, 0.5) 60%,rgba(0, 0, 0, 0) 70%,rgba(0, 0, 0, 0) 100%);
+    @include minimized-background-gradient($dark-red, $light-red, left);
   }
 
   .minimized {
