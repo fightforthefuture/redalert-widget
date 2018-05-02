@@ -157,8 +157,13 @@ document.addEventListener('DOMContentLoaded', function() {
   const variant = query.variant === 'phone-only' ? query.variant : 'full-form'
   document.body.setAttribute('data-variant', variant)
 
+  const position = query.position === 'left' ? 'left' : 'right'
+  document.body.setAttribute('data-position', position)
+
   if ((typeof(query.ga) === 'undefined' || query.ga === 'true' || query.ga === '1') && !navigator.doNotTrack) {
     initGoogleAnalytics(`redalert-widget-${variant}`)
     addTrackingEvents()
   }
+
+  document.querySelector('html').classList.remove('invisible');
 });

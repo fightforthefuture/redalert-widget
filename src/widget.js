@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     alwaysShow: !!(opts.alwaysShow || false),
     disableGoogleAnalytics: !!(opts.disableGoogleAnalytics || false),
     iframeHost: (typeof(opts.iframeHost) === 'undefined' ? 'https://redalert.battleforthenet.com' : opts.iframeHost),
+    position: (opts.position || null),
 
     maximize: function() {
       document.getElementById(this.id).classList.add('RAW--maximized');
@@ -64,6 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
         src += 'ga=false&';
       }
 
+      if (this.position) {
+        src += 'position=' + this.position + '&';
+      }
+
       return src.replace(/(\?|&)$/, '');
     },
 
@@ -110,8 +115,19 @@ document.addEventListener('DOMContentLoaded', function() {
       if (this.alwaysShow || window.location.href.indexOf(this.id) !== -1 || !this.getCookie(cookieName)) {
         this.setCookie(cookieName, 'true', this.cookieExpirationDays);
 
+        var left, right;
+
+        if (this.position === 'left') {
+          left = '0';
+          right = 'auto';
+        }
+        else {
+          left = 'auto';
+          right = '0';
+        }
+
         this.injectCSS('RED_ALERT_CSS',
-          '#' + this.id + ' { position: fixed; right: 0px; bottom: 0px; width: 450px; height: 350px; z-index: 20000; -webkit-overflow-scrolling: touch; overflow-y: auto; transition: width .2s ease-in, height .2s ease-in; } ' +
+          '#' + this.id + ' { position: fixed; right: ' + right + '; left: ' + left + '; bottom: 0px; width: 450px; height: 350px; z-index: 20000; -webkit-overflow-scrolling: touch; overflow: hidden; transition: width .2s ease-in, height .2s ease-in; } ' +
           '#' + this.id + '.RAW--maximized { width: 100%; height: 100%; } ' +
           '#' + this.id + '.RAW--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform .2s ease-in, opacity .2s ease-in; } ' +
           '#' + this.id + ' iframe { width: 100%; height: 100%; }'
