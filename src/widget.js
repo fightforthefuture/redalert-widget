@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+(function() {
   'use strict';
 
   var opts = window.RED_ALERT_OPTIONS || {};
@@ -9,9 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     org: (opts.org || null),
     cookieExpirationDays: parseFloat((opts.cookieExpirationDays || 1)),
     alwaysShow: !!(opts.alwaysShow || false),
-    disableGoogleAnalytics: !!(opts.disableGoogleAnalytics || false),
+    disableGoogleAnalytics: !!opts.disableGoogleAnalytics,
     iframeHost: (typeof(opts.iframeHost) === 'undefined' ? 'https://redalert.battleforthenet.com' : opts.iframeHost),
     position: (opts.position || null),
+    cowardlyRefuseToMaximize: !!opts.cowardlyRefuseToMaximize,
 
     maximize: function() {
       document.getElementById(this.id).classList.add('RAW--maximized');
@@ -67,6 +68,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
       if (this.position) {
         src += 'position=' + this.position + '&';
+      }
+
+      if (this.cowardlyRefuseToMaximize) {
+        src += 'dayofaction=false&';
       }
 
       return src.replace(/(\?|&)$/, '');
@@ -140,5 +145,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   };
 
-  widget.init();
-});
+  // Wait for DOM content to load.
+  switch(document.readyState) {
+    case 'complete':
+    case 'loaded':
+    case 'interactive':
+      widget.init();
+      break;
+    default:
+      document.addEventListener('DOMContentLoaded', widget.init.bind(widget));
+  }
+})();

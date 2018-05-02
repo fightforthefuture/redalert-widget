@@ -153,6 +153,10 @@ document.addEventListener('DOMContentLoaded', function() {
     return (year === y && month === m && day === d)
   }
 
+  function isTruthy(str) {
+    return typeof(str) === 'undefined' || `${str}` === 'true' || `${str}` === '1'
+  }
+
   // bind events
   attachEvent('form', 'submit', submitForm)
   attachEvent('.minimized', 'click', maximize)
@@ -171,12 +175,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const position = query.position === 'left' ? 'left' : 'right'
   document.body.setAttribute('data-position', position)
 
-  if ((typeof(query.ga) === 'undefined' || query.ga === 'true' || query.ga === '1') && !navigator.doNotTrack) {
+  if (isTruthy(query.qa) && !navigator.doNotTrack) {
     initGoogleAnalytics(`redalert-widget-${variant}`)
     addTrackingEvents()
   }
 
-  if (todayIs(2018, 5, 9)) {
+  if (isTruthy(query.dayofaction) && todayIs(2018, 5, 9)) {
     maximize()
   }
 
