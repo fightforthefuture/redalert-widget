@@ -23,7 +23,8 @@ $dark-red: #bc0000;
 }
 
 @mixin background-gradient($from-color, $to-color) {
-  background-image: repeating-radial-gradient(ellipse farthest-corner at right bottom, $from-color 0%, $to-color 70%, rgba($to-color, .75) 90%, rgba(0, 0, 0, 0) 200%);
+  background-image: repeating-radial-gradient(ellipse farthest-corner at right bottom, $from-color 0%, $to-color 70%, rgba($to-color, .95) 90%, rgba(0, 0, 0, 0) 200%);
+  background-attachment: fixed;
 }
 
 @keyframes fade-in {
@@ -83,7 +84,6 @@ html {
 h1, h2, h3, h4, h5, .btn {
   font-family: $title-font;
   font-weight: 700;
-  line-height: 1.2;
 }
 
 body {
@@ -97,8 +97,11 @@ body {
 
 .container {
   width: 600px;
-  max-width: 90%;
   margin: auto;
+
+  @media only screen and (max-width: 600px) {
+    width: 90%;
+  }
 }
 
 h1 {
@@ -110,11 +113,14 @@ h1 {
 
 h2 {
   font-size: 4rem;
+  line-height: 1;
   margin: 0;
 }
 
 h3 {
   font-size: 2.8rem;
+  line-height: 1;
+  margin: 1rem 0;
 }
 
 p {
@@ -150,6 +156,7 @@ input, textarea {
   border: none;
   border-radius: $border-radius;
   font-size: 2.2rem;
+  line-height: 1.33;
   letter-spacing: 0.2rem;
   transition: transform .2s ease-in;
 
@@ -162,9 +169,13 @@ input, textarea {
 
 hr {
   border: 0;
-  height: .1rem;
+  height: 1px;
   background-color: #ccc;
   margin: 3.5rem 0;
+
+  @include mobile {
+    margin: 2.5rem 0;
+  }
 }
 
 form {
@@ -191,11 +202,6 @@ form {
       }
     }
   }
-
-  &.is-loading .is-not-loading,
-  &.is-not-loading .is-loading {
-    display: none;
-  }
 }
 
 .disclaimer p {
@@ -209,6 +215,10 @@ footer {
   text-align: center;
   font-family: $title-font;
   text-transform: uppercase;
+
+  @include mobile {
+    margin-top: 2rem;
+  }
 }
 
 body:not([data-step="1"]) {
@@ -237,6 +247,7 @@ body:not([data-step="1"]) {
 
 .step {
   animation: fade-in .4s ease-out;
+  padding: 2rem 0;
 }
 
 #step1 {
@@ -256,6 +267,7 @@ body:not([data-step="1"]) {
     border: .2rem solid #111;
     padding: 2rem;
     width: 58%;
+    height: 6.9rem;
   }
 
   .btn {
@@ -316,6 +328,12 @@ body:not([data-step="1"]) {
     &.btn-donate {
       margin-right: 0;
     }
+
+    @include mobile {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
   }
 
   .btn-facebook {
@@ -346,9 +364,11 @@ body:not([data-step="1"]) {
 
 body[data-minimized="true"] {
   background-image: repeating-radial-gradient(ellipse farthest-corner at right bottom,$light-red 0%,$dark-red 45%,rgba($dark-red, 0.5) 60%,rgba(0, 0, 0, 0) 70%,rgba(0, 0, 0, 0) 100%);
+  background-attachment: scroll;
 }
 
 .minimized {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
   position: absolute;
   bottom: 2rem;
   right: 2.5rem;

@@ -91,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   // window.showStep = showStep
 
+  // TODO: error handling
   function submitForm(event) {
     event.preventDefault()
 
@@ -100,8 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     xhr.addEventListener('error', console.error)
     xhr.addEventListener('load', event => {
-      const response = JSON.parse(event.currentTarget.responseText)
-      console.log(response)
       form.removeAttribute('data-loading')
 
       const nextStep = parseInt(document.body.getAttribute('data-step')) + 1
@@ -128,20 +127,27 @@ document.addEventListener('DOMContentLoaded', function() {
     postMessage('closeWindow')
   }
 
+  let isMaximizing = false
+
   function maximize(event) {
+    if (isMaximizing) return
+    isMaximizing = true
     trackEvent('widget', 'maximized')
     postMessage('maximize')
     const el = document.querySelector('.minimized')
     el.classList.add('fade-out')
     setTimeout(() => {
       document.body.setAttribute('data-minimized', false)
-    }, 400)
+      isMaximizing = false
+    }, 200)
   }
 
   // bind events
   attachEvent('form', 'submit', submitForm)
   attachEvent('.minimized', 'click', maximize)
+  attachEvent('.minimized', 'touchstart', maximize)
   attachEvent('.close', 'click', closeWindow)
+  attachEvent('.close', 'touchstart', e => e.stopPropagation())
 
   const query = parseQuery(location.search)
   const org = query.org || getRandomOrg()

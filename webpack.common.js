@@ -106,7 +106,8 @@ module.exports = {
     new HandlebarsPlugin(),
     new CopyWebpackPlugin([
       { from: './src/widget.js', to: 'widget.js' },
-      { from: './src/demo.html', to: 'demo.html' }
+      { from: './src/demo.html', to: 'demo.html' },
+      { from: './src/favicon.ico', to: 'favicon.ico' }
     ]),
     extractSass,
   ]

@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   'use strict';
 
   var opts = window.RED_ALERT_OPTIONS || {};
+  var bodyStyles = {};
 
   var widget = {
     id: 'RED_ALERT_WIDGET',
@@ -13,6 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     maximize: function() {
       document.getElementById(this.id).classList.add('RAW--maximized');
+      bodyStyles.overflow = document.body.style.overflow;
+      bodyStyles.position = document.body.style.position;
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
     },
 
     closeWindow: function() {
@@ -20,6 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
       el.classList.add('RAW--closing')
       setTimeout(function(){
         el.parentNode.removeChild(el);
+        document.body.style.overflow = bodyStyles.overflow;
+        document.body.style.position = bodyStyles.position;
       }, 300);
     },
 
@@ -104,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.setCookie(cookieName, 'true', this.cookieExpirationDays);
 
         this.injectCSS('RED_ALERT_CSS',
-          '#' + this.id + ' { position: fixed; right: 0px; bottom: 0px; width: 450px; height: 350px; z-index: 20000; -webkit-overflow-scrolling: touch; transition: width .4s ease-in, height .4s ease-in; } ' +
+          '#' + this.id + ' { position: fixed; right: 0px; bottom: 0px; width: 450px; height: 350px; z-index: 20000; -webkit-overflow-scrolling: touch; overflow-y: auto; transition: width .2s ease-in, height .2s ease-in; } ' +
           '#' + this.id + '.RAW--maximized { width: 100%; height: 100%; } ' +
           '#' + this.id + '.RAW--closing { transform: scale(0); transform-origin: bottom right; opacity: 0; transition: transform .2s ease-in, opacity .2s ease-in; } ' +
           '#' + this.id + ' iframe { width: 100%; height: 100%; }'
