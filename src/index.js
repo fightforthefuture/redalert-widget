@@ -142,6 +142,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 200)
   }
 
+  function todayIs(y, m, d) {
+    const date = new Date()
+    const offset = 4 // EDT
+    date.setHours(date.getHours() + date.getTimezoneOffset()/60 - offset)
+    const year = date.getFullYear()
+    const month = date.getMonth() + 1
+    const day = date.getDate()
+
+    return (year === y && month === m && day === d)
+  }
+
   // bind events
   attachEvent('form', 'submit', submitForm)
   attachEvent('.minimized', 'click', maximize)
@@ -163,6 +174,10 @@ document.addEventListener('DOMContentLoaded', function() {
   if ((typeof(query.ga) === 'undefined' || query.ga === 'true' || query.ga === '1') && !navigator.doNotTrack) {
     initGoogleAnalytics(`redalert-widget-${variant}`)
     addTrackingEvents()
+  }
+
+  if (todayIs(2018, 5, 1)) {
+    maximize()
   }
 
   document.querySelector('html').classList.remove('invisible');
