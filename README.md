@@ -27,7 +27,7 @@ Between May 9th and the vote (date TBD), the widget will display at a smaller si
 
 Starting at midnight, the night before the vote, the widget will expand again.  Try it out for yourself [right here](https://www.fightforthefuture.org?redalert).
 
-The widget is designed to appear once per user, per device, per day, but can be configured to display at a different interval. If you'd like to force it to show up on your page for testing, reload the page with `#ALWAYS_SHOW_BFTN_WIDGET` at the end of the URL.
+The widget is designed to appear once per user, per device, per day, but can be configured to display at a different interval. If you'd like to force it to show up on your page for testing, reload the page with `#ALWAYS_SHOW_RED_ALERT` at the end of the URL.
 
 Please take a look at [**widget.js**](https://github.com/fightforthefuture/redalert-widget/blob/master/static/widget.js) if you want to see exactly what you're embedding on your page.
 
