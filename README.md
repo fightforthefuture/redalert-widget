@@ -80,5 +80,5 @@ If you define an object called `RED_ALERT_OPTIONS` before including the widget c
     alwaysShow: false // @type {boolean}
   };
 </script>
-<script src="https://widget.battleforthenet.com/widget.js" async></script>
+<script src="https://redalert.battleforthenet.com/widget.js" async></script>
 ```
