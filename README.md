@@ -10,7 +10,7 @@ Add this one line of JavaScript to any page, and you're good to go: ([**See the 
 <script src="https://redalert.battleforthenet.com/widget.js" async></script>
 ```
 
-You can change the positioning and do some customization via the `RED_ALERT_OPTIONS` [described below](#customization).
+You can change the positioning and do some customization via the `RED_ALERT_OPTIONS` [described below](#customization-options).
 
 If you have any problems or questions regarding the widget, please [submit an issue](https://github.com/fightforthefuture/redalert-widget/issues).
 
