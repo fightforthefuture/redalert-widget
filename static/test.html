@@ -14,7 +14,10 @@
       overflow: hidden;
     }
   </style>
-  <script>var RED_ALERT_OPTIONS = { iframeHost: '', alwaysShow: true, org: 'fftf', variant: 'full-form' }</script>
+  <script>
+    var variant = window.location.search.indexOf('variant=phone-only') !== -1 ? 'phone-only' : 'full-form';
+    var RED_ALERT_OPTIONS = { iframeHost: '', alwaysShow: true, org: 'fftf', variant: variant };
+  </script>
   <script src="./widget.js"></script>
 </head>
 
