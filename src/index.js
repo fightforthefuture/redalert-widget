@@ -154,6 +154,16 @@ function isTruthy(str) {
   return typeof(str) === 'undefined' || `${str}` === 'true' || `${str}` === '1'
 }
 
+function startTextFlow(phone) {
+  const xhr = new XMLHttpRequest()
+  xhr.open('POST', 'https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts')
+  xhr.setRequestHeader('Content-Type', 'application/json')
+  xhr.send(JSON.stringify({
+    flow: '9a1fe2d7-0647-4133-88ec-6bf7097228e8',
+    phone: phone
+  }))
+}
+
 function init() {
   // bind events
   attachEvent('form', 'submit', submitForm)
@@ -163,6 +173,17 @@ function init() {
   attachEvent('.close', 'touchstart', e => e.stopPropagation())
   attachEvent('#step1_phone', 'change', e => {
     getEl('step2_phone').value = e.currentTarget.value
+  })
+
+  let hasStartedTextFlow = false
+
+  attachEvent('#step1 .email-form', 'submit', e => {
+    var phone = getEl('step1_phone').value
+
+    if (!hasStartedTextFlow && phone) {
+      startTextFlow(phone)
+      hasStartedTextFlow = true
+    }
   })
 
   const query = parseQuery(location.search)
