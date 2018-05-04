@@ -14,7 +14,7 @@
         <h1>{{ title }}</h1>
         <div data-variant="full-form">
           <div class="body">{{{ step1.body_html }}}</div>
-          <form method="post" action="https://queue.fightforthefuture.org/action" class="email-form" data-loading="false">
+          <form method="post" action="https://queue.fightforthefuture.org/action" class="email-form" data-loading="false" data-next-step="2">
             <div class="row">
               <input type="text" name="member[first_name]" placeholder="{{ step1.name_placeholder }}" required autofocus>
               <input type="email" name="member[email]" placeholder="{{ step1.email_placeholder }}" required>
@@ -22,6 +22,7 @@
             <div class="row">
               <input type="address" name="member[street_address]" placeholder="{{ step1.address_placeholder }}" class="address" required>
               <input type="tel" name="member[postcode]" placeholder="{{ step1.zip_placeholder }}" class="zip" required id="email_zip">
+              <input type="tel" name="member[phone_number]" placeholder="{{ step1.phone_placeholder }}" class="phone" id="step1_phone">
             </div>
             <a class="btn" data-loading="true">{{ step1.loading_button }}</a>
             <button class="btn" data-loading="false">{{ step1.cta_button }}</button>
@@ -51,9 +52,10 @@
         </div>
         <div data-variant="phone-only">
           <div class="body">{{{ step1_phone.body_html }}}</div>
-          <form method="post" action="https://call-congress.fightforthefuture.org/create" class="call-form" data-loading="false">
+          <form method="post" action="https://call-congress.fightforthefuture.org/create" class="call-form" data-loading="false" data-next-step="3">
             <div class="row">
-              <input type="tel" name="userPhone" placeholder="{{ step1_phone.phone_placeholder }}" required autofocus>
+              <input type="tel" name="userPhone" placeholder="{{ step1_phone.phone_placeholder }}" required autofocus class="phone">
+              <input type="tel" name="userLocation" placeholder="{{ step1_phone.zip_placeholder }}" required class="zip">
               <button class="btn" data-loading="false">{{ step1_phone.cta_button }}</button>
               <a class="btn" data-loading="true">{{ step1_phone.loading_button }}</a>
             </div>
@@ -68,14 +70,14 @@
       <div class="step" id="step2" data-step="2">
         <h2>{{{ step2.title_html }}}</h2>
         <div class="body">{{{ step2.body_html }}}</div>
-        <form method="post" action="https://call-congress.fightforthefuture.org/create" class="call-form" data-loading="false">
+        <form method="post" action="https://call-congress.fightforthefuture.org/create" class="call-form" data-loading="false" data-next-step="3">
           <div class="row">
-            <input type="tel" name="userPhone" placeholder="{{ step2.phone_placeholder }}" required autofocus>
+            <input type="tel" name="userPhone" placeholder="{{ step2.phone_placeholder }}" required autofocus id="step2_phone">
             <button class="btn" data-loading="false">{{ step2.cta_button }}</button>
             <a class="btn" data-loading="true">{{ step1.loading_button }}</a>
           </div>
           <div class="disclaimer">{{{ step2.disclaimer_html }}}</div>
-          <input type="hidden" name="zipcode" id="call_zip">
+          <input type="hidden" name="userLocation" id="call_zip">
           <input type="hidden" name="campaignId" value="{{ step2.callpower_campaign_id }}">
         </form>
         <footer>

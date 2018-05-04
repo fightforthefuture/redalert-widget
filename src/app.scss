@@ -143,10 +143,9 @@ a {
 
 input, textarea {
   font-family: $title-font;
-  text-transform: uppercase;
   border: none;
   font-size: 1.7rem;
-  padding: 2rem;
+  padding: 2rem 1.5rem;
   border-radius: $border-radius;
   width: 100%;
   color: #0f0728;
@@ -196,17 +195,25 @@ form {
     input, .btn {
       float: left;
       width: 49.25%;
+    }
 
-      &:first-child {
-        margin-right: 1.5%;
+    input {
+      margin-right: 1.5%;
+
+      &:last-child {
+        margin-right: 0;
       }
 
       &.address {
-        width: 68.25%;
+        width: 38%;
       }
 
       &.zip {
-        width: 30%;
+        width: 19%;
+      }
+
+      &.phone {
+        width: 40%;
       }
     }
   }
@@ -265,7 +272,21 @@ body:not([data-step="1"]) {
 
   .call-form {
     .btn {
-      padding: 1.85rem 0;
+      padding: 1.7rem 0;
+      width: 38%;
+    }
+
+    @include mobile {
+      input.phone {
+        width: 30%;
+      }
+
+      .btn {
+        width: 48%;
+        font-size: 1.7rem;
+        padding: 2rem 0;
+        white-space: nowrap;
+      }
     }
   }
 }

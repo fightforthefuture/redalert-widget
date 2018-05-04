@@ -88,7 +88,6 @@ function trackEvent(category, action, label, value) {
 function showStep(step) {
   document.body.setAttribute('data-step', step)
 }
-// window.showStep = showStep
 
 // TODO: error handling
 function submitForm(event) {
@@ -100,10 +99,9 @@ function submitForm(event) {
 
   xhr.addEventListener('error', console.error)
   xhr.addEventListener('load', event => {
-    form.removeAttribute('data-loading')
-
-    const nextStep = parseInt(document.body.getAttribute('data-step')) + 1
-    if (document.querySelectorAll(`.step[data-step="${nextStep}"]`).length > 0) {
+    form.setAttribute('data-loading', false)
+    const nextStep = parseInt(form.getAttribute('data-next-step'))
+    if (document.querySelector(`.step[data-step="${nextStep}"]`)) {
       showStep(nextStep)
     }
   })
@@ -163,6 +161,9 @@ function init() {
   attachEvent('.minimized', 'touchstart', maximize)
   attachEvent('.close', 'click', closeWindow)
   attachEvent('.close', 'touchstart', e => e.stopPropagation())
+  attachEvent('#step1_phone', 'change', e => {
+    getEl('step2_phone').value = e.currentTarget.value
+  })
 
   const query = parseQuery(location.search)
   const org = query.org || getRandomOrg()

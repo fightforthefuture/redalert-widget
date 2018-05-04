@@ -13,6 +13,7 @@
   var iframeHost = opts.iframeHost !== undefined ? opts.iframeHost : 'https://redalert.battleforthenet.com';
   var position = opts.position || null;
   var cowardlyRefuseToMaximize = !!opts.cowardlyRefuseToMaximize;
+  var variant = opts.variant || null;
 
   var stylesToReset = {};
 
@@ -91,11 +92,15 @@
     }
 
     if (position) {
-      src += 'position=' + position + '&';
+      src += 'position=' + encodeURIComponent(position) + '&';
     }
 
     if (cowardlyRefuseToMaximize) {
       src += 'dayofaction=false&';
+    }
+
+    if (variant) {
+      src += 'variant=' + encodeURIComponent(variant) + '&'
     }
 
     return src.replace(/(\?|&)$/, '');
