@@ -43,7 +43,7 @@
 
             <!-- Action Network -->
             <input type="hidden" name="an_tags" value="[&quot;net-neutrality&quot;]">
-            <input type="hidden" name="an_petition_id" value="e31d4d82-9fac-4cf0-882e-96bc565e1f2">
+            <input type="hidden" name="an_petition_id" value="{{ step1.an_petition_id }}">
           </form>
           <footer>
             <a href="#" class="close">{{ step1.close_button }}</a>
@@ -58,10 +58,10 @@
               <a class="btn" data-loading="true">{{ step1_phone.loading_button }}</a>
             </div>
             <div class="disclaimer">{{{ step1_phone.disclaimer_html }}}</div>
-            <input type="hidden" name="campaignId" value="battleforthenet-2017">
+            <input type="hidden" name="campaignId" value="{{ step1_phone.callpower_campaign_id }}">
           </form>
           <footer>
-            <a href="#" class="close">{{ step1.close_button }}</a>
+            <a href="#" class="close">{{ step1_phone.close_button }}</a>
           </footer>
         </div>
       </div>
@@ -76,7 +76,7 @@
           </div>
           <div class="disclaimer">{{{ step2.disclaimer_html }}}</div>
           <input type="hidden" name="zipcode" id="call_zip">
-          <input type="hidden" name="campaignId" value="battleforthenet-2017">
+          <input type="hidden" name="campaignId" value="{{ step2.callpower_campaign_id }}">
         </form>
         <footer>
           <a href="#" class="close">{{ step2.close_button }}</a>
