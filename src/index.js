@@ -178,9 +178,9 @@ function init() {
   let hasStartedTextFlow = false
 
   attachEvent('#step1 .email-form', 'submit', e => {
-    var phone = getEl('step1_phone').value
+    const phone = getEl('step1_phone').value
 
-    if (!hasStartedTextFlow && phone) {
+    if (!hasStartedTextFlow && phone && org === 'fftf') {
       startTextFlow(phone)
       hasStartedTextFlow = true
     }
