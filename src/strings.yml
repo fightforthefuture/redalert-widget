@@ -30,7 +30,7 @@ en:
     loading_button: Saving...
     disclaimer_html: Your number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
     close_button: No thanks, I don't want to take action
-    callpower_campaign_id: RED-ALERT-call-only-widget
+    callpower_campaign_id: RED_ALERT_call_only_widget_2RSens_House
 
   step2:
     title_html: "**Thanks!** Can you call?"
@@ -39,7 +39,7 @@ en:
     cta_button: Call
     disclaimer_html: Your number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
     close_button: No thanks, I'm all done
-    callpower_campaign_id: RED-ALERT-widget
+    callpower_campaign_id: RED_ALERT_widget_2RSens_House
 
   step3:
     title: Calling you now...
