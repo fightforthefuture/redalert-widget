@@ -15,9 +15,8 @@ en:
     phone_placeholder: "Phone # (Optional)"
     cta_button: Contact Congress
     loading_button: Saving...
-    fftf_disclaimer_html: <a href="https://www.fightforthefuture.org">Fight for the Future</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we will follow up by SMS. Message & data rates apply. You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
-    dp_disclaimer_html: <a href="https://www.demandprogress.org">Demand Progress</a>will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we will follow up by SMS. Message & data rates apply. You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
-    fp_disclaimer_html: <a href="https://www.freepress.net/">Free Press</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we will follow up by SMS. Message & data rates apply. You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
+    disclaimer_with_phone_html: <a data-org="fftf" href="https://www.fightforthefuture.org">Fight for the Future</a><a data-org="dp" href="https://www.demandprogress.org">Demand Progress</a><a data-org="fp" href="https://www.freepress.net">Free Press</a> will email you updates, and you can unsubscribe at any time. If you enter your number (it's optional) we will follow up by SMS. Message & data rates apply. You can always text STOP to stop receiving messages. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
+    disclaimer_without_phone_html: <a data-org="fftf" href="https://www.fightforthefuture.org">Fight for the Future</a><a data-org="dp" href="https://www.demandprogress.org">Demand Progress</a><a data-org="fp" href="https://www.freepress.net">Free Press</a> will contact me about important net neutrality protests and news. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
     close_button: No thanks, I don't want to take action
     an_petition_id: e31d4d82-9fac-4cf0-882e-96bc565e1f2
 

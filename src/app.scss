@@ -447,8 +447,20 @@ body[data-position="left"] {
   }
 }
 
+body[data-phone-test="without-phone"] {
+  input.address {
+    width: 70%;
+  }
+
+  input.zip {
+    width: 28.5%;
+    margin-right: 0;
+  }
+}
+
 @include data-filter(org, fftf, fp, dp);
 @include data-filter(variant, full-form, phone-only);
 @include data-filter(step, 1, 2, 3);
 @include data-filter(loading, true, false);
 @include data-filter(minimized, true, false);
+@include data-filter(phone-test, with-phone, without-phone);

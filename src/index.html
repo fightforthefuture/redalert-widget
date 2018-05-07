@@ -6,7 +6,7 @@
   <title>{{ title }}</title>
   <link rel="stylesheet" href="https://use.typekit.net/dkr1hdf.css">
 </head>
-<body data-org="fftf" data-variant="full-form" data-step="1" data-minimized="true">
+<body data-org="fftf" data-variant="full-form" data-step="1" data-minimized="true" data-phone-test="with-phone">
   <div class="flex-center" data-minimized="false">
     <div class="container">
       <div class="step" id="step1" data-step="1">
@@ -22,13 +22,12 @@
             <div class="row">
               <input type="address" name="member[street_address]" placeholder="{{ step1.address_placeholder }}" class="address" required>
               <input type="tel" name="member[postcode]" placeholder="{{ step1.zip_placeholder }}" class="zip" required id="email_zip">
-              <input type="tel" name="member[phone_number]" placeholder="{{ step1.phone_placeholder }}" class="phone" id="step1_phone">
+              <input type="tel" name="member[phone_number]" placeholder="{{ step1.phone_placeholder }}" class="phone" id="step1_phone" data-phone-test="with-phone">
             </div>
             <a class="btn" data-loading="true">{{ step1.loading_button }}</a>
             <button class="btn" data-loading="false">{{ step1.cta_button }}</button>
-            <div class="disclaimer" data-org="fftf">{{{ step1.fftf_disclaimer_html }}}</div>
-            <div class="disclaimer" data-org="dp">{{{ step1.dp_disclaimer_html }}}</div>
-            <div class="disclaimer" data-org="fp">{{{ step1.fp_disclaimer_html }}}</div>
+            <div class="disclaimer" data-phone-test="with-phone">{{{ step1.disclaimer_with_phone_html }}}</div>
+            <div class="disclaimer" data-phone-test="without-phone">{{{ step1.disclaimer_without_phone_html }}}</div>
 
             <!-- Mothership Honeypot Bot Defense -->
             <input class="hidden" type="checkbox" checked="checked" name="hp_enabled">
