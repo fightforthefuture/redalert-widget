@@ -6,7 +6,7 @@
   <title>{{ title }}</title>
   <link rel="stylesheet" href="https://use.typekit.net/dkr1hdf.css">
 </head>
-<body data-org="fftf" data-variant="full-form" data-step="1" data-minimized="true" data-phone-test="with-phone">
+<body data-org="fftf" data-variant="full-form" data-step="1" data-minimized="true" data-phone-test="with-phone" data-donations="true">
   <div class="flex-center" data-minimized="false">
     <div class="container">
       <div class="step" id="step1" data-step="1">
@@ -99,9 +99,9 @@
         <div class="clearfix btn-row">
           <a class="btn btn-facebook" href="{{ step3.facebook_share_url }}" target="_blank">{{ step3.facebook_button }}</a>
           <a class="btn btn-twitter" href="{{ step3.twitter_share_url }}" target="_blank">{{ step3.twitter_button }}</a>
-          <a class="btn btn-donate" href="{{ step3.fftf_donate_url }}" target="_blank" data-org="fftf">{{ step3.donate_button }}</a>
-          <a class="btn btn-donate" href="{{ step3.fp_donate_url }}" target="_blank" data-org="fp">{{ step3.donate_button }}</a>
-          <a class="btn btn-donate" href="{{ step3.dp_donate_url }}" target="_blank" data-org="dp">{{ step3.donate_button }}</a>
+          <a class="btn btn-donate" href="{{ step3.fftf_donate_url }}" target="_blank" data-org="fftf" data-donations="true">{{ step3.donate_button }}</a>
+          <a class="btn btn-donate" href="{{ step3.fp_donate_url }}" target="_blank" data-org="fp" data-donations="true">{{ step3.donate_button }}</a>
+          <a class="btn btn-donate" href="{{ step3.dp_donate_url }}" target="_blank" data-org="dp" data-donations="true">{{ step3.donate_button }}</a>
         </div>
         <footer>
           <a href="#" class="close">{{ step3.close_button }}</a>

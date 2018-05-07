@@ -211,6 +211,10 @@ function init() {
     maximize()
   }
 
+  if (!isTruthy(query.donations)) {
+    document.body.setAttribute('data-donations', 'false')
+  }
+
   document.querySelector('html').classList.remove('invisible');
 }
 

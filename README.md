@@ -73,6 +73,11 @@ If you define an object called `RED_ALERT_OPTIONS` before including the widget c
      * the user's browser.)
      */
     disableGoogleAnalytics: false, // @type {boolean}
+
+    /*
+     * Prevent the donate button from showing. Defaults to false.
+     */
+    disableDonations: false, // @type {boolean}
     
     /*
      * Always show the widget. Useful for testing. Defaults to false.

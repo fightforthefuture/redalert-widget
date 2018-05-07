@@ -10,6 +10,7 @@
   var cookieExpirationDays = parseFloat(opts.cookieExpirationDays || 1);
   var alwaysShow = !!(opts.alwaysShow || window.location.hash.indexOf('ALWAYS_SHOW_RED_ALERT') !== -1);
   var disableGoogleAnalytics = !!opts.disableGoogleAnalytics;
+  var disableDonations = !!opts.disableDonations;
   var iframeHost = opts.iframeHost !== undefined ? opts.iframeHost : 'https://redalert.battleforthenet.com';
   var position = opts.position || null;
   var cowardlyRefuseToMaximize = !!opts.cowardlyRefuseToMaximize;
@@ -89,6 +90,10 @@
 
     if (disableGoogleAnalytics) {
       src += 'ga=false&';
+    }
+
+    if (disableDonations) {
+      src += 'donations=false&';
     }
 
     if (position) {
