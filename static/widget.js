@@ -3,6 +3,7 @@
 
   var domId = 'RED_ALERT_WIDGET';
   var animationDuration = 200;
+  var closedCookie = '_RED_ALERT_WIDGET_CLOSED';
 
   // user-configurable options
   var opts = window.RED_ALERT_OPTIONS || {};
@@ -56,6 +57,8 @@
     setTimeout(function(){
       el.parentNode.removeChild(el);
     }, animationDuration);
+
+    setCookie(closedCookie, 'true', cookieExpirationDays);
   }
 
   function getCookie(cname) {
@@ -149,12 +152,7 @@
   }
 
   function init() {
-    var cookieName = '_RED_ALERT_WIDGET_SHOWN';
-    var hasNotBeenShown = !getCookie(cookieName);
-
-    if (alwaysShow || hasNotBeenShown) {
-      setCookie(cookieName, 'true', cookieExpirationDays);
-
+    if (alwaysShow || !getCookie(closedCookie)) {
       var left, right;
 
       if (position === 'left') {
