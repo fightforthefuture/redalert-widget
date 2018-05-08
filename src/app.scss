@@ -448,7 +448,7 @@ body[data-position="left"] {
   }
 }
 
-body[data-phone-test="without-phone"] {
+body[data-variant="full-form"][data-phone-test="without-phone"] {
   input.address {
     width: 70%;
   }

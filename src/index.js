@@ -165,13 +165,63 @@ function startTextFlow(phone) {
   }))
 }
 
+function geocodeZip(zipCode, successCallback=console.log, errorCallback=console.error) {
+  const xhr = new XMLHttpRequest()
+  xhr.open('GET', `https://geo.battleforthenet.com/zip/${zipCode.substring(0, 5)}.json`, true)
+  xhr.addEventListener('error', errorCallback)
+  xhr.addEventListener('load', event => {
+    try {
+      const geo = JSON.parse(event.currentTarget.responseText)
+      successCallback(geo)
+    }
+    catch (error) {
+      errorCallback(error)
+    }
+  })
+  xhr.send()
+}
+
+function getCallPowerCampaignId(stateCode) {
+  const variant = document.body.getAttribute('data-variant')
+  const data = require('./callpower.json')[variant]
+
+  if (stateCode) {
+    for (let i = 0; i < data.stateCampaigns.length; i++) {
+      const campaign = data.stateCampaigns[i]
+      if (campaign.states.indexOf(stateCode) !== -1) {
+        return campaign.id
+      }
+    }
+  }
+
+  return data.defaultCampaign
+}
+
+function updateCallPowerCampaignIds(stateCode) {
+  const campaignId = getCallPowerCampaignId(stateCode)
+  const inputs = document.querySelectorAll('input[name="campaignId"]')
+  for (let i = 0; i < inputs.length; i++) {
+    inputs[i].value = campaignId
+  }
+}
+
+function onZipChange(event) {
+  const zipCode = event.currentTarget.value
+
+  geocodeZip(zipCode, geo => {
+    updateCallPowerCampaignIds(geo.state_code)
+  }, error => {
+    updateCallPowerCampaignIds(null)
+  })
+}
+
 function init() {
-  // bind events
   attachEvent('form', 'submit', submitForm)
   attachEvent('.minimized', 'click', maximize)
   attachEvent('.minimized', 'touchstart', maximize)
   attachEvent('.close', 'click', closeWindow)
   attachEvent('.close', 'touchstart', e => e.stopPropagation())
+  attachEvent('input.zip', 'change', onZipChange)
   attachEvent('#step1_phone', 'change', e => {
     getEl('step2_phone').value = e.currentTarget.value
   })
