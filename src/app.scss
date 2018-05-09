@@ -383,11 +383,11 @@ body:not([data-step="1"]) {
   }
 
   .btn-donate {
-    background-color: #eee;
-    color: #111;
+    background-color: #ffeb65;
+    color: #000;
 
     &:hover {
-      background-color: darken(#eee, 10%);
+      background-color: darken(#ffeb65, 10%);
     }
   }
 }
