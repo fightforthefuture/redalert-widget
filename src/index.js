@@ -57,7 +57,7 @@ function addTrackingEvents() {
   attachEvent('.btn-facebook', 'click', () => trackEvent('facebook_button', 'click'))
   attachEvent('.btn-twitter', 'click', () => trackEvent('twitter_button', 'click'))
   attachEvent('.btn-donate', 'click', () => trackEvent('donate_button', 'click'))
-  attachEvent('.email-form', 'submit', () => trackEvent('email_form', 'submit', 'phone-test=' + document.body.getAttribute('data-phone-test')))
+  attachEvent('.email-form', 'submit', () => trackEvent('email_form', 'submit'))
   attachEvent('.call-form', 'submit', () => trackEvent('call_form', 'submit'))
   attachEvent('.minimized .close', 'click', () => trackEvent('minimized_close_button', 'click'))
   attachEvent('.minimized .btn', 'click', event => {
@@ -276,10 +276,6 @@ function init() {
 
   const position = query.position === 'left' ? 'left' : 'right'
   document.body.setAttribute('data-position', position)
-
-  if (Math.random() < 0.5) {
-    document.body.setAttribute('data-phone-test', 'without-phone')
-  }
 
   if (isTruthy(query.qa) && !navigator.doNotTrack) {
     initGoogleAnalytics(`redalert-widget-${variant}`)

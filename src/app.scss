@@ -465,4 +465,3 @@ body[data-variant="full-form"][data-phone-test="without-phone"] {
 @include data-filter(loading, true, false);
 @include data-filter(minimized, true, false);
 @include data-filter(donations, true, false);
-@include data-filter(phone-test, with-phone, without-phone);
