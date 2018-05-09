@@ -3,7 +3,7 @@
 
   var domId = 'RED_ALERT_WIDGET';
   var animationDuration = 200;
-  var closedCookie = '_RED_ALERT_WIDGET_CLOSED';
+  var closedCookie = '_RED_ALERT_WIDGET_CLOSED_';
 
   // user-configurable options
   var opts = window.RED_ALERT_OPTIONS || {};
