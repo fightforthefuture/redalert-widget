@@ -90,7 +90,6 @@ function showStep(step) {
   document.body.setAttribute('data-step', step)
 }
 
-// TODO: error handling
 function submitForm(event) {
   event.preventDefault()
 
@@ -98,15 +97,17 @@ function submitForm(event) {
   const formData = new FormData(form)
   const xhr = new XMLHttpRequest()
 
-  xhr.addEventListener('error', console.error)
-  xhr.addEventListener('load', event => {
+  function onLoad(event) {
     form.setAttribute('data-loading', false)
     const nextStep = parseInt(form.getAttribute('data-next-step'))
     if (document.querySelector(`.step[data-step="${nextStep}"]`)) {
       showStep(nextStep)
     }
-  })
+  }
 
+  // TODO: error handling
+  xhr.addEventListener('error', onLoad)
+  xhr.addEventListener('load', onLoad)
   form.setAttribute('data-loading', true)
   xhr.open(form.getAttribute('method'), form.getAttribute('action'))
   xhr.send(formData)
@@ -233,6 +234,10 @@ function onZipChange(event) {
 }
 
 function init() {
+  if (typeof(Raven) !== 'undefined') {
+    Raven.config('https://8509ccd4f5554a6f97faff7cd2ee0861@sentry.io/1203579').install()
+  }
+
   attachEvent('form', 'submit', submitForm)
   attachEvent('.minimized', 'click', maximize)
   attachEvent('.minimized', 'touchstart', maximize)
@@ -291,6 +296,5 @@ function init() {
 
   document.querySelector('html').classList.remove('invisible');
 }
-
 document.addEventListener('DOMContentLoaded', init)
 
