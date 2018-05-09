@@ -177,7 +177,8 @@ function saveSignature() {
     address: document.querySelector('input[name="member[street_address]"').value,
     comments: document.querySelector('input[name="action_comment"]').value,
     petition_id: document.querySelector('input[name="an_petition_id"]').value,
-    org: document.body.getAttribute('data-org')
+    org: document.body.getAttribute('data-org'),
+    referrer: document.referrer
   }))
 }
 
