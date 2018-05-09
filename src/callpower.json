@@ -7,7 +7,7 @@
       },
       {
         "id": "RED_ALERT_widget_House_2Sens",
-        "states": ["CA", "CT", "DE", "HI", "IL", "MA", "MD",, "MI", "MN", "NJ", "NM", "NY", "OR", "RI", "VA", "VT", "WA", "NH"]
+        "states": ["CA", "CT", "DE", "HI", "IL", "MA", "MD", "MI", "MN", "NJ", "NM", "NY", "OR", "RI", "VA", "VT", "WA", "NH"]
       }
     ],
     "defaultCampaign": "RED_ALERT_widget_2RSens_House"
