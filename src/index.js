@@ -104,6 +104,15 @@ function submitForm(event) {
     if (document.querySelector(`.step[data-step="${nextStep}"]`)) {
       showStep(nextStep)
     }
+
+    const className = form.getAttribute('class')
+
+    if (className.match(/email/)) {
+      pingCounter('email')
+    }
+    else if (className.match(/call/)) {
+      pingCounter('call')
+    }
   }
 
   // TODO: error handling
@@ -182,6 +191,12 @@ function saveSignature() {
     org: document.body.getAttribute('data-org'),
     referrer: document.referrer
   }))
+}
+
+function pingCounter(counter) {
+  const xhr = new XMLHttpRequest()
+  xhr.open('POST', `https://signatures-api.herokuapp.com/ping/${counter}`)
+  xhr.send()
 }
 
 function geocodeZip(zipCode, successCallback=console.log, errorCallback=console.error) {
