@@ -57,6 +57,7 @@ function addTrackingEvents() {
   attachEvent('.btn-facebook', 'click', () => trackEvent('facebook_button', 'click'))
   attachEvent('.btn-twitter', 'click', () => trackEvent('twitter_button', 'click'))
   attachEvent('.btn-donate', 'click', () => trackEvent('donate_button', 'click'))
+  attachEvent('.btn-events', 'click', () => trackEvent('events_button', 'click'))
   attachEvent('.email-form', 'submit', () => trackEvent('email_form', 'submit'))
   attachEvent('.call-form', 'submit', () => trackEvent('call_form', 'submit'))
   attachEvent('.minimized .close', 'click', () => trackEvent('minimized_close_button', 'click'))
@@ -271,7 +272,18 @@ function init() {
   document.body.setAttribute('data-org', org)
   getEl('email_org').value = org
 
-  const variant = query.variant === 'phone-only' ? query.variant : 'full-form'
+  let variant
+
+  if (query.variant === 'full-form' || query.variant === 'phone-only') {
+    variant = query.variant
+  }
+  else if (Math.random() < 0.5) {
+    variant = 'full-form'
+  }
+  else {
+    variant = 'phone-only'
+  }
+
   document.body.setAttribute('data-variant', variant)
 
   const position = query.position === 'left' ? 'left' : 'right'
