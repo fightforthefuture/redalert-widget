@@ -287,24 +287,13 @@ function init() {
   document.body.setAttribute('data-org', org)
   getEl('email_org').value = org
 
-  let variant
-
-  if (query.variant === 'full-form' || query.variant === 'phone-only') {
-    variant = query.variant
-  }
-  else if (Math.random() < 0.5) {
-    variant = 'full-form'
-  }
-  else {
-    variant = 'phone-only'
-  }
-
+  const variant = query.variant === 'phone-only' ? query.variant : 'full-form'
   document.body.setAttribute('data-variant', variant)
 
   const position = query.position === 'left' ? 'left' : 'right'
   document.body.setAttribute('data-position', position)
 
-  if (isTruthy(query.qa) && !navigator.doNotTrack) {
+  if (isTruthy(query.ga) && !navigator.doNotTrack) {
     initGoogleAnalytics(`redalert-widget-${variant}`)
     addTrackingEvents()
   }
