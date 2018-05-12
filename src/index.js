@@ -293,6 +293,9 @@ function init() {
   const position = query.position === 'left' ? 'left' : 'right'
   document.body.setAttribute('data-position', position)
 
+  const language = location.pathname.replace(/^(\/index-|\/)/, '').replace(/\.html$/, '') || 'en'
+  document.body.setAttribute('data-language', language)
+
   if (isTruthy(query.ga) && !navigator.doNotTrack) {
     initGoogleAnalytics(`redalert-widget-${variant}`)
     addTrackingEvents()
