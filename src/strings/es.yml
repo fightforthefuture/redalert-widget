@@ -1,4 +1,4 @@
-title: Alerta Roja por la Neutralidad en la Red ("Net Neutrality")
+title: Alerta Roja para la Neutralidad de la Red
 
 minimized:
   close_button: Close
@@ -6,11 +6,11 @@ minimized:
 
 step1:
   body_html: |
-    La FCC votó para permitir que los ISP (proveedores de acceso a internet) como Comcast y Verizon arruinen la internet reduciendo las velocidades de acceeso, imponiendo censura y nuevos cargos. Pero ahora el Senado está a punto de forzar el que ocurra un voto para anularlos y salvar la internet. **Dile a tus legisladores: "Por favor sea un co-patrocinador, firma la petición de descarga y vote por el CRA para restablecer la neutralidad en la red ("Net Neutrality")."**
+    El FCC votó para permitir que los ISP (proveedores de acceso a internet) como Comcast y Verizon arruinen el internet reduciendo las velocidades de acceso, imponiendo censura y nuevos cargos. Pero ahora el Senado está a punto de forzar un voto que lo anule y salve el internet. **Dile a tus legisladores: "Por favor sea un co-patrocinador, firme la petición de descarga y vote por el CRA para restablecer la neutralidad en la red ("Net Neutrality")**
   name_placeholder: Nombre*
-  email_placeholder: Email*
+  email_placeholder: Correo electronico*
   address_placeholder: Dirección física*
-  zip_placeholder: ZIP*
+  zip_placeholder: Codigo postal*
   phone_placeholder: "Teléfono # (opcional)"
   cta_button: Contactar al Congreso
   loading_button: Grabando...
