@@ -1,8 +1,8 @@
 title: Alerta Roja para la Neutralidad de la Red
 
 minimized:
-  close_button: Close
-  cta_button: Take Action
+  close_button: cerrar
+  cta_button: Actúe ahora
 
 step1:
   body_html: |
