@@ -151,6 +151,11 @@ input, textarea {
   border-radius: $border-radius;
   width: 100%;
   color: #0f0728;
+
+  @include mobile {
+    padding: 2rem 0.5rem;
+    font-size: 1.5rem;
+  }
 }
 
 .btn {
@@ -456,6 +461,19 @@ body[data-variant="full-form"][data-phone-test="without-phone"] {
   input.zip {
     width: 28.5%;
     margin-right: 0;
+  }
+}
+
+body[data-language="es"] {
+  form .row {
+    input.address,
+    input.zip {
+      width: 32%;
+    }
+
+    input.phone {
+      width: 33%;
+    }
   }
 }
 
