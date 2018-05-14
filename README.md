@@ -89,7 +89,12 @@ If you define an object called `RED_ALERT_OPTIONS` before including the widget c
     /*
      * Always show the widget. Useful for testing. Defaults to false.
      */
-    alwaysShow: false // @type {boolean}
+    alwaysShow: false, // @type {boolean}
+
+    /*
+     * Automatically maximizes the widget. Defaults to false.
+     */
+    alwaysMaximize: false // @type {boolean}
   };
 </script>
 <script src="https://redalert.battleforthenet.com/widget.js" async></script>

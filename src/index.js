@@ -301,7 +301,7 @@ function init() {
     addTrackingEvents()
   }
 
-  if (isTruthy(query.dayofaction) && todayIs(2018, 5, 9)) {
+  if (query.maximized || (isTruthy(query.dayofaction) && todayIs(2018, 5, 9))) {
     maximize()
   }
 

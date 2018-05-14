@@ -17,6 +17,7 @@
   var cowardlyRefuseToMaximize = !!opts.cowardlyRefuseToMaximize;
   var variant = opts.variant || null;
   var language = 'en';
+  var alwaysMaximize = !!opts.alwaysMaximize;
 
   // spanish is specified or no language is set and browser is set to spanish
   if (opts.language === 'es' || (!opts.language && navigator && navigator.language.match(/^es/))) {
@@ -121,7 +122,11 @@
     }
 
     if (variant) {
-      src += 'variant=' + encodeURIComponent(variant) + '&'
+      src += 'variant=' + encodeURIComponent(variant) + '&';
+    }
+
+    if (alwaysMaximize) {
+      src += 'maximized=true&';
     }
 
     return src.replace(/(\?|&)$/, '');
