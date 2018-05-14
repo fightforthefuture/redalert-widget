@@ -7,6 +7,7 @@ minimized:
 step1:
   body_html: |
     El FCC votó para permitir que los ISP (proveedores de acceso a internet) como Comcast y Verizon arruinen el internet reduciendo las velocidades de acceso, imponiendo censura y nuevos cargos. Pero ahora el Senado está a punto de forzar un voto que lo anule y salve el internet. **Dile a tus legisladores: "Por favor sea un co-patrocinador, firme la petición de descarga y vote por el CRA para restablecer la neutralidad en la red ("Net Neutrality")**
+  international_cta_html: No en los Estados Unidos? **Haz esto en su lugar.**
   name_placeholder: Nombre*
   email_placeholder: Correo electronico*
   address_placeholder: Dirección física*

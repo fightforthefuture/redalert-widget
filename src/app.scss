@@ -441,6 +441,20 @@ body[data-minimized="true"] {
   }
 }
 
+.international-cta {
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 700;
+
+  a {
+    text-decoration: none;
+
+    strong {
+      text-decoration: underline;
+    }
+  }
+}
+
 body[data-position="left"] {
   .minimized-bg {
     @include minimized-background-gradient($dark-red, $light-red, left);
@@ -483,3 +497,4 @@ body[data-language="es"] {
 @include data-filter(loading, true, false);
 @include data-filter(minimized, true, false);
 @include data-filter(donations, true, false);
+@include data-filter(country, us, non-us);

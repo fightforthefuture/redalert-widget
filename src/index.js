@@ -64,6 +64,7 @@ function addTrackingEvents() {
   attachEvent('.minimized .btn', 'click', event => {
     trackEvent('minimized_cta_button', 'click', event.currentTarget.innerHTML)
   })
+  attachEvent('.international-cta', 'click', () => trackEvent('international_cta', 'click'))
 }
 
 // send event to Google Analytics
@@ -149,6 +150,13 @@ function maximize(event) {
     document.body.setAttribute('data-minimized', false)
     isMaximizing = false
   }, 200)
+
+  geocodeIpAddress(geo => {
+    if (geo.country && geo.country.iso_code && geo.country.iso_code.toLowerCase() !== 'us') {
+      document.body.setAttribute('data-country', 'non-us')
+      trackEvent('international_cta', 'show')
+    }
+  })
 }
 
 function todayIs(y, m, d) {
@@ -207,6 +215,22 @@ function geocodeZip(zipCode, successCallback=console.log, errorCallback=console.
     try {
       const geo = JSON.parse(event.currentTarget.responseText)
       successCallback(geo)
+    }
+    catch (error) {
+      errorCallback(error)
+    }
+  })
+  xhr.send()
+}
+
+function geocodeIpAddress(successCallback=console.log, errorCallback=console.error) {
+  const xhr = new XMLHttpRequest()
+  xhr.open('GET', 'https://fftf-geocoder.herokuapp.com/', true)
+  xhr.addEventListener('error', errorCallback)
+  xhr.addEventListener('load', event => {
+    try {
+      const data = JSON.parse(event.currentTarget.responseText)
+      successCallback(data)
     }
     catch (error) {
       errorCallback(error)
