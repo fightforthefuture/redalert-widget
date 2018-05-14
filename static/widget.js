@@ -16,6 +16,12 @@
   var position = opts.position || null;
   var cowardlyRefuseToMaximize = !!opts.cowardlyRefuseToMaximize;
   var variant = opts.variant || null;
+  var language = 'en';
+
+  // spanish is specified or no language is set and browser is set to spanish
+  if (opts.language === 'es' || (!opts.language && navigator && navigator.language.match(/^es/))) {
+    language = 'es';
+  }
 
   var stylesToReset = {};
 
@@ -85,7 +91,14 @@
   }
 
   function getIframeSrc() {
-    var src = iframeHost + '/?';
+    var src = iframeHost;
+
+    if (language === 'en') {
+      src += '/?';
+    }
+    else {
+      src += 'index-' + language + '.html?';
+    }
 
     if (org) {
       src += 'org=' + encodeURIComponent(org) + '&';

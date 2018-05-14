@@ -31,8 +31,11 @@ function formatStrings(data, isMarkdown=false) {
   return parsedData
 }
 
-const strings = yaml.safeLoad(fs.readFileSync(path.resolve(__dirname, 'src/strings.yml'), 'utf8'))
-const formattedStrings = formatStrings(strings.en)
+function loadStrings(languageCode) {
+  const stringsFile = path.resolve(__dirname, 'src', 'strings', `${languageCode}.yml`)
+  const strings = yaml.safeLoad(fs.readFileSync(stringsFile, 'utf8'))
+  return formatStrings(strings)
+}
 
 function HandlebarsPlugin(options) {
   options = options || {};
@@ -43,7 +46,8 @@ HandlebarsPlugin.prototype.apply = function(compiler) {
   compiler.hooks.compilation.tap('HandlebarsPlugin', function (compilation) {
     compilation.hooks.htmlWebpackPluginBeforeHtmlProcessing.tapAsync('HandlebarsPlugin', function (data, callback) {
       const template = handlebars.compile(data.html)
-      data.html = template(formattedStrings)
+      const strings = loadStrings(data.plugin.options.language)
+      data.html = template(strings)
       callback(null, data)
     });
   });
@@ -101,7 +105,14 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      inlineSource: '.(js|css)$'
+      inlineSource: '.(js|css)$',
+      language: 'en'
+    }),
+    new HtmlWebPackPlugin({
+      template: './src/index.html',
+      inlineSource: '.(js|css)$',
+      language: 'es',
+      filename: 'index-es.html'
     }),
     new HandlebarsPlugin(),
     new CopyWebpackPlugin([

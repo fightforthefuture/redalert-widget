@@ -47,6 +47,13 @@ If you define an object called `RED_ALERT_OPTIONS` before including the widget c
     position: 'right', // @type {string}
 
     /**
+     * Set the language of the widget. Can be "en" for English or "es" for Spanish.
+     * Defaults to null, which will obey the nagivator.language setting of the 
+     * viewer's browser.
+     */
+    language: null, // @type {string}
+
+    /**
      * Set this to true to disable loading the full screen widget by default on
      * May 9th. Defaults to false.
      */
