@@ -97,7 +97,7 @@
       src += '/?';
     }
     else {
-      src += 'index-' + language + '.html?';
+      src += '/index-' + language + '.html?';
     }
 
     if (org) {
