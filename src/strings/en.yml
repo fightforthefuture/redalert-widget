@@ -6,7 +6,7 @@ minimized:
 
 step1:
   body_html: |
-    The FCC voted to let ISPs like Comcast and Verizon ruin the Internet with throttling, censorship, and new fees. But now the Senate is about to force a vote to overrule them and save the Internet. **Tell your lawmakers: "Please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality."**
+    The Senate voted to save net neutrality.  Now we need the House of Representatives to do the same, or else the FCC will let ISPs like Comcast and Verizon ruin the internet with throttling, censorship and unnecessary fees. **Tell your lawmakers: "Please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality."**
   international_cta_html: Not in the US? **Do this instead.**
   name_placeholder: Name*
   email_placeholder: Email*
@@ -23,7 +23,7 @@ step1:
 
 step1_phone:
   body_html: |
-    The FCC voted to let ISPs like Comcast and Verizon ruin the Internet with throttling, censorship, and new fees. But now the Senate is about to force a vote to overrule them and save the Internet. **Tell your lawmakers: "Vote yes on the Congressional Review Act resolution to restore net neutrality."**
+    The FCC voted to let ISPs like Comcast and Verizon ruin the Internet with throttling, censorship, and new fees. But the Senate overruled them to save the Internet. **Tell your House Representatives: "Vote yes on the Congressional Review Act resolution to restore net neutrality."**
   phone_placeholder: Phone*
   zip_placeholder: ZIP*
   cta_button: Call Congress
@@ -49,7 +49,7 @@ step3:
     I'm calling to ask my lawmakers to please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality. Thank you.
   warning: If lines are busy, we may call you in a few minutes.
   buttons_header: Done calling?  Do these things, too.
-  events_button: Join an event near you on May 14th
+  events_button: Join an event near you
   facebook_button: Share on Facebook
   twitter_button: Share on Twitter
   donate_button: Donate
