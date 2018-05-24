@@ -151,12 +151,12 @@ function maximize(event) {
     isMaximizing = false
   }, 200)
 
-  geocodeIpAddress(geo => {
-    if (geo.country && geo.country.iso_code && geo.country.iso_code.toLowerCase() !== 'us') {
-      document.body.setAttribute('data-country', 'non-us')
-      trackEvent('international_cta', 'show')
-    }
-  })
+  // geocodeIpAddress(geo => {
+  //   if (geo.country && geo.country.iso_code && geo.country.iso_code.toLowerCase() !== 'us') {
+  //     document.body.setAttribute('data-country', 'non-us')
+  //     trackEvent('international_cta', 'show')
+  //   }
+  // })
 }
 
 function todayIs(y, m, d) {
