@@ -203,7 +203,7 @@ function saveSignature() {
 
 function pingCounter(counter) {
   const xhr = new XMLHttpRequest()
-  xhr.open('POST', `https://signatures-api.herokuapp.com/ping/${counter}`)
+  xhr.open('POST', `https://counter.battleforthenet.com/ping/${counter}`)
   xhr.send()
 }
 
