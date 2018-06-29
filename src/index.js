@@ -184,23 +184,6 @@ function startTextFlow(phone) {
   }))
 }
 
-function saveSignature() {
-  const xhr = new XMLHttpRequest()
-  xhr.open('POST', 'https://signatures-api.herokuapp.com/signatures')
-  xhr.setRequestHeader('Content-Type', 'application/json')
-  xhr.send(JSON.stringify({
-    name: document.querySelector('input[name="member[first_name]"').value,
-    email: document.querySelector('input[name="member[email]"').value,
-    zip_code: document.querySelector('input[name="member[postcode]"').value,
-    phone: document.querySelector('input[name="member[phone_number]"').value,
-    address: document.querySelector('input[name="member[street_address]"').value,
-    comments: document.querySelector('input[name="action_comment"]').value,
-    petition_id: document.querySelector('input[name="an_petition_id"]').value,
-    org: document.body.getAttribute('data-org'),
-    referrer: document.referrer
-  }))
-}
-
 function pingCounter(counter) {
   const xhr = new XMLHttpRequest()
   xhr.open('POST', `https://counter.battleforthenet.com/ping/${counter}`)
@@ -296,13 +279,6 @@ function init() {
     if (!hasStartedTextFlow && phone && org === 'fftf') {
       startTextFlow(phone)
       hasStartedTextFlow = true
-    }
-
-    try {
-      saveSignature()
-    }
-    catch (error) {
-      //
     }
   })
 
