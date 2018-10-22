@@ -176,10 +176,10 @@ function isTruthy(str) {
 
 function startTextFlow(phone) {
   const xhr = new XMLHttpRequest()
-  xhr.open('POST', 'https://utdy3yxx7l.execute-api.us-east-1.amazonaws.com/v1/flow-starts')
+  xhr.open('POST', 'https://text-flow-starter.fftf.xyz/opt-ins')
   xhr.setRequestHeader('Content-Type', 'application/json')
   xhr.send(JSON.stringify({
-    flow: '9a1fe2d7-0647-4133-88ec-6bf7097228e8',
+    opt_in_path: 'OP5953C0BBD1870756CE4041DD8F00C7C1',
     phone: phone
   }))
 }
