@@ -1,6 +1,6 @@
 {
   "full-form": {
-    "stateCampaigns": [
+    "stateCampaigns_DISABLED": [
       {
         "id": "RED_ALERT_widget_2RSens_House",
         "states": ["ID", "UT", "AZ", "AK", "WY", "SD", "NE", "KS", "OK", "TX", "IA", "AR", "LA", "TN", "KY", "GA", "SC", "NC", "CO", "NV", "MT", "ND", "MO", "WI", "IN", "AL", "FL", "PA", "OH", "WV", "ME"]
@@ -10,10 +10,10 @@
         "states": ["CA", "CT", "DE", "HI", "IL", "MA", "MD", "MI", "MN", "NJ", "NM", "NY", "OR", "RI", "VA", "VT", "WA", "NH"]
       }
     ],
-    "defaultCampaign": "RED_ALERT_widget_2RSens_House"
+    "defaultCampaign": "BattleForTheNet_BadBills2019"
   },
   "phone-only": {
-    "stateCampaigns": [
+    "stateCampaigns_DISABLED": [
       {
         "id": "RED_ALERT_call_only_widget_2RSens_House",
         "states": ["ID", "UT", "AZ", "AK", "WY", "SD", "NE", "KS", "OK", "TX", "IA", "AR", "LA", "TN", "KY", "GA", "SC", "NC", "CO", "NV", "MT", "ND", "MO", "WI", "IN", "AL", "FL", "PA", "OH", "WV", "ME"]
@@ -23,6 +23,6 @@
         "states": ["CA", "CT", "DE", "HI", "IL", "MA", "MD", "MI", "MN", "NJ", "NM", "NY", "OR", "RI", "VA", "VT", "WA", "NH"]
       }
     ],
-    "defaultCampaign": "RED_ALERT_call_only_widget_2RSens_House"
+    "defaultCampaign": "BattleForTheNet_BadBills2019"
   }
 }
