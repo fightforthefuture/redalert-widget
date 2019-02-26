@@ -6,7 +6,7 @@ minimized:
 
 step1:
   body_html: |
-    In 2017, the FCC gutted net neutrality, opening the door for big cable companies to create Internet "fast lanes," censor content, and throttle traffic ... and they've already begun doing so.  **Tell your lawmakers: "Please protect our online freedom by voting for legislation that will return Title II net neutrality protections.**
+    The FCC has gutted net neutrality, opening the door for big cable companies to create Internet "fast lanes," censor content, and throttle traffic ... and they've already begun doing so.  **Tell your lawmakers: "Please protect our online freedom by voting for legislation that will return Title II net neutrality protections.**
   name_placeholder: Name*
   email_placeholder: Email*
   address_placeholder: Address*
@@ -22,7 +22,7 @@ step1:
 
 step1_phone:
   body_html: |
-    In 2017, the FCC gutted net neutrality, opening the door for big cable companies to create Internet "fast lanes," censor content, and throttle traffic ... and they've already begun doing so.  **Tell your lawmakers: "Please protect our online freedom by voting for legislation that will return Title II net neutrality protections.**
+    The FCC has gutted net neutrality, opening the door for big cable companies to create Internet "fast lanes," censor content, and throttle traffic ... and they've already begun doing so.  **Tell your lawmakers: "Please protect our online freedom by voting for legislation that will return Title II net neutrality protections.**
   phone_placeholder: Phone*
   zip_placeholder: ZIP*
   cta_button: Call Congress
