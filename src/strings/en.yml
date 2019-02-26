@@ -6,8 +6,7 @@ minimized:
 
 step1:
   body_html: |
-    The Senate voted to save net neutrality.  Now we need the House of Representatives to do the same, or else the FCC will let ISPs like Comcast and Verizon ruin the internet with throttling, censorship and unnecessary fees. **Tell your lawmakers: "Please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality."**
-  international_cta_html: Not in the US? **Do this instead.**
+    In 2017, the FCC gutted net neutrality, opening the door for big cable companies to create Internet "fast lanes," censor content, and throttle traffic ... and they've already begun doing so.  **Tell your lawmakers: "Please protect our online freedom by voting for legislation that will return Title II net neutrality protections.**
   name_placeholder: Name*
   email_placeholder: Email*
   address_placeholder: Address*
@@ -19,18 +18,18 @@ step1:
   disclaimer_without_phone_html: <a data-org="fftf" href="https://www.fightforthefuture.org">Fight for the Future</a><a data-org="dp" href="https://www.demandprogress.org">Demand Progress</a><a data-org="fp" href="https://www.freepress.net">Free Press</a> will contact me about important net neutrality protests and news. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
   close_button: No thanks, I don't want to take action
   an_petition_id: 0b116dcd-f327-4b33-9ac3-4a65ed073948
-  action_comment: Please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality.
+  action_comment: Please restore strong, Title II protections for net neutrality.
 
 step1_phone:
   body_html: |
-    The FCC voted to let ISPs like Comcast and Verizon ruin the Internet with throttling, censorship, and new fees. But the Senate overruled them to save the Internet. **Tell your House Representatives: "Vote yes on the Congressional Review Act resolution to restore net neutrality."**
+    In 2017, the FCC gutted net neutrality, opening the door for big cable companies to create Internet "fast lanes," censor content, and throttle traffic ... and they've already begun doing so.  **Tell your lawmakers: "Please protect our online freedom by voting for legislation that will return Title II net neutrality protections.**
   phone_placeholder: Phone*
   zip_placeholder: ZIP*
   cta_button: Call Congress
   loading_button: Saving...
   disclaimer_html: Your number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
   close_button: No thanks, I don't want to take action
-  callpower_campaign_id: RED_ALERT_call_only_widget_2RSens_House
+  callpower_campaign_id: BattleForTheNet_BadBills2019
 
 step2:
   title_html: "**Thanks!** Can you call?"
@@ -39,7 +38,7 @@ step2:
   cta_button: Call
   disclaimer_html: Your number will only be used for this call and will never be shared with third parties. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
   close_button: No thanks, I'm all done
-  callpower_campaign_id: RED_ALERT_widget_2RSens_House
+  callpower_campaign_id: BattleForTheNet_BadBills2019
 
 step3:
   title: Calling you now...
