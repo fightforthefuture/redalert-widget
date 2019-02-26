@@ -6,7 +6,7 @@ minimized:
 
 step1:
   body_html: |
-    El FCC votó para permitir que los ISP (proveedores de acceso a internet) como Comcast y Verizon arruinen el internet reduciendo las velocidades de acceso, imponiendo censura y nuevos cargos. Pero ahora el Senado está a punto de forzar un voto que lo anule y salve el internet. **Dile a tus legisladores: "Por favor sea un co-patrocinador, firme la petición de descarga y vote por el CRA para restablecer la neutralidad en la red ("Net Neutrality")**
+    La FCC ha eliminado la neutralidad en la red, abriendo la puerta a las grandes compañías de cable para crear "vías rápidas" de Internet, contenido de censura y tráfico de acelerador ... y ya han comenzado a hacerlo. ** Dile a tus legisladores: "Proteja nuestra libertad en línea votando por una legislación que devolverá las protecciones la neutralidad en la red ("Net Neutrality") del Título II. **
   international_cta_html: No en los Estados Unidos? **Haz esto en su lugar.**
   name_placeholder: Nombre*
   email_placeholder: Correo electronico*
@@ -19,18 +19,18 @@ step1:
   disclaimer_without_phone_html: <a data-org="fftf" href="https://www.fightforthefuture.org">Fight for the Future</a><a data-org="dp" href="https://www.demandprogress.org">Demand Progress</a><a data-org="fp" href="https://www.freepress.net">Free Press</a> me contactará acerca de protestas y noticias importantes acerca de la neutralidad en la red. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Política de Privacidad (en inglés)</a>
   close_button: No gracias, no quiero tomar ninguna acción
   an_petition_id: 0b116dcd-f327-4b33-9ac3-4a65ed073948
-  action_comment: Por favor co-patrocine/apoye, firme la petición de descarga y vote por el CRA para restablecer la neutralidad en la red.
+  action_comment: Por favor restaure las protecciones fuertes del Título II para la neutralidad en la red.
 
 step1_phone:
   body_html: |
-    La FCC votó para permtir que los ISP (proveedores de acceso a internet) como Comcast y Verizon arruinen la internet con reduciendo las velocidades de acceso, imponiendo censura y nuevos cargos. Pero el Senado está a punto de forzar el que ocurra un voto para anularlos y salvar la internet. **Dile a tus legisladores: "Vote SÍ en la resolución del Acta Congresional de Revisión (Congressional Review Act) para restablecer la neutralidad en la internet ("Net Neutrality")."**
+    La FCC ha eliminado la neutralidad en la red, abriendo la puerta a las grandes compañías de cable para crear "vías rápidas" de Internet, contenido de censura y tráfico de acelerador ... y ya han comenzado a hacerlo. ** Dile a tus legisladores: "Proteja nuestra libertad en línea votando por una legislación que devolverá las protecciones la neutralidad en la red ("Net Neutrality") del Título II. **
   phone_placeholder: Teléfono*
   zip_placeholder: ZIP*
   cta_button: Llame al Congreso
   loading_button: Grabando...
   disclaimer_html: Su número será utilizado únicamente para esta llamada y jamás será compartido con terceros. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Privacy Policy</a>
   close_button: No gracias, no quiero tomar ninguna acción
-  callpower_campaign_id: RED_ALERT_call_only_widget_2RSens_House
+  callpower_campaign_id: BattleForTheNet_BadBills2019
 
 step2:
   title_html: "**¡Gracias!** ¿Puedes tu llamar?"
@@ -39,22 +39,22 @@ step2:
   cta_button: Llamar
   disclaimer_html: Su número será utilizado únicamente para esta llamada y jamás será compartido con terceros. <a href="https://www.battleforthenet.com/privacy/" target="_blank">Política de Privacidad (en inglés)</a>
   close_button: No gracias, ya finalicé
-  callpower_campaign_id: RED_ALERT_widget_2RSens_House
+  callpower_campaign_id: BattleForTheNet_BadBills2019
 
 step3:
   title: LLamando ahora...
   body_html: |
     TEXTO EN INGLÉS **Introduce yourself, be polite and say:**
 
-    I'm calling to ask my lawmakers to please co-sponsor, sign the discharge petition, and vote for the CRA to restore net neutrality. Thank you.
+    I'm calling to ask my lawmakers to reject proposals from Representatives Latta, McMorris Rodgers and Walden that will weaken net neutrality. I want real net neutrality protections, NOT laws written by cable company lobbyists. Thank you.
   warning: If lines are busy, we may call you in a few minutes.
   buttons_header: ¿Ya llamaste?  A continuación, más cosas que puedes hacer.
-  events_button: Únete a un evento el 14 de mayo
+  events_button: Únete a un evento
   facebook_button: Compártelo en Facebook
   twitter_button: Compártelo en Twitter
   donate_button: Dona
   facebook_share_url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.battleforthenet.com
-  twitter_share_url: https://twitter.com/intent/tweet?text=A%20mediados%20de%20mayo%2C%20el%20Senado%20de%20EE.UU.%20votar%E1%20a%20favor%20o%20no%20de%20salvar%20la%20neutralidad%20en%20la%20red.%20%DAnete%20a%20millones%20de%20norteamericanos%20como%20t%FA%20que%20exigen%20libertad%20en%20la%20internet.%20%20https%3A//www.battleforthenet.com
+  twitter_share_url: https://twitter.com/intent/tweet?text=Dile%20a%20tus%20legisladores%20que%20apoyen%20una%20legislación%20fuerte%20para%20la%20neutralidad%20en%20la%20red.%20%20https%3A//www.battleforthenet.com
   fftf_donate_url: https://donate.fightforthefuture.org
   dp_donate_url: https://secure.actblue.com/donate/nndayofaction?refcode=20170712-bftn
   fp_donate_url: https://freepress.actionkit.com/donate/single/
